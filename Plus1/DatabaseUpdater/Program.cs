@@ -14,14 +14,13 @@ namespace DatabaseUpdater
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Start Product Table Routine");
             UpdateProductTable();
-            Console.WriteLine("Finished Product Table Routine");
             Console.ReadKey();
         }
 
         static void UpdateProductTable()
         {
+             Console.WriteLine("Start Product Table Routine");
             XmlDocument doc = new XmlDocument();
             doc.Load( BaseURL + "products");
             string xmlcontents = doc.InnerXml;
@@ -50,7 +49,8 @@ namespace DatabaseUpdater
                     }
                 }
             }
-        }
+            Console.WriteLine("Finished Product Table Routine");
+        }  
 
     
     }
