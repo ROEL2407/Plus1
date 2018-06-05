@@ -14,7 +14,7 @@ namespace Plus1.Models
         public string Shortdescription { get; set; }
         public string FullDescription { get; set; }
        // public image
-        public decimal Weight { get; set; }
+        public string Weight { get; set; }
         public decimal Price { get; set; }
       //  public int CategoryID { get; set; }
   //    public int SubcategoryID { get; set; }

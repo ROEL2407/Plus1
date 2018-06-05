@@ -208,6 +208,10 @@
     <Compile Include="Migrations\201806050759452_Init.Designer.cs">
       <DependentUpon>201806050759452_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806051047317_Product.cs" />
+    <Compile Include="Migrations\201806051047317_Product.Designer.cs">
+      <DependentUpon>201806051047317_Product.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -461,6 +465,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806050759452_Init.resx">
       <DependentUpon>201806050759452_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806051047317_Product.resx">
+      <DependentUpon>201806051047317_Product.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
