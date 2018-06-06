@@ -29,21 +29,23 @@
 
 
 
-                                @if (true)
-    {
-        int nmb = 0;
-
-        foreach (var item in Model)
-        {
-
-                            if (nmb == 2)
+@if (true)
 {
-    nmb = 0;
-
-                            @:<div class="agile_top_brands_grids">kaas
 
 
-}
+    int nmb = 0;
+
+    foreach (var item in Model)
+    {
+
+        if (nmb == 0)
+        {
+          
+
+                            @:<div class="agile_top_brands_grids">
+
+
+        }
 
 
 
@@ -99,17 +101,17 @@
                                 </div>
                             </div>
 
-                                        if (nmb == 2)
-                                        {
-                                            nmb = 0;
+        if (nmb == 2)
+        {
+            nmb = -1;
                               @:<div class="clearfix"></div></div>
 
-                                        }
+        }
+        nmb = nmb + 1;
 
+    }
 
-                                    }
-
-                                }
+}
                             </table>
 
 
