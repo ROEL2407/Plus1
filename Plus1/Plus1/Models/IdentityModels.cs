@@ -32,6 +32,7 @@ namespace Plus1.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<Plus1.Models.Product> Products { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<NewsArticle> NewsArticles { get; set; }
     }
 }

@@ -33,7 +33,7 @@ namespace DatabaseUpdater
             {
                 Console.WriteLine("Inserting: " + xndNode["Title"].InnerText);
 
-                using (var connection = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=C:\Users\Tom\Documents\GitHub\Plus1\Plus1\Plus1\App_Data\aspnet-Plus1-20180514115049.mdf;Initial Catalog=aspnet-Plus1-20180514115049;Integrated Security=True"))
+                using (var connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=aspnet-Plus1-20180514115049;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
                 {
                     connection.Open();
                     var sql = "INSERT INTO Products(EAN, Title, Brand, Shortdescription, FullDescription, Weight, Price) VALUES(@EAN, @Title, @Brand, @ShortDescription, @FullDescription, @Weight, @Price)";

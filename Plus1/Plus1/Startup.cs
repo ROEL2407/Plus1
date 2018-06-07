@@ -18,7 +18,7 @@ namespace Plus1
         {
             ApplicationDbContext context = new ApplicationDbContext();
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-            if (!roleManager.RoleExists("Bezoeker"))
+           if (!roleManager.RoleExists("Bezoeker"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
                 role.Name = "Bezoeker";

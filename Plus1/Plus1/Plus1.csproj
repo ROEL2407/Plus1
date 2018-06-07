@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomePageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsArticlesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -204,13 +205,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806050759452_Init.cs" />
-    <Compile Include="Migrations\201806050759452_Init.Designer.cs">
-      <DependentUpon>201806050759452_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806051047317_Product.cs" />
-    <Compile Include="Migrations\201806051047317_Product.Designer.cs">
-      <DependentUpon>201806051047317_Product.cs</DependentUpon>
+    <Compile Include="Migrations\201806061036040_init.cs" />
+    <Compile Include="Migrations\201806061036040_init.Designer.cs">
+      <DependentUpon>201806061036040_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -397,6 +394,11 @@
     <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
     <Content Include="Areas\Admin\Views\HomePage\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsArticles\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsArticles\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsArticles\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsArticles\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsArticles\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -463,11 +465,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806050759452_Init.resx">
-      <DependentUpon>201806050759452_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806051047317_Product.resx">
-      <DependentUpon>201806051047317_Product.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806061036040_init.resx">
+      <DependentUpon>201806061036040_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
