@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -8,19 +8,26 @@ using System.Web;
 using System.Web.Mvc;
 using Plus1.Models;
 
-namespace Plus1.Areas.Admin.Controllers
+namespace Plus1.Controllers
 {
     public class ProductsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Admin/Products
-        public ActionResult Index()
-        {
-            return View(db.Products.ToList());
+        // GET: Products
+        public ActionResult Index(string searchString) { 
+       
+            var products = from m in db.Products select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                products = products.Where(s => s.Title.Contains(searchString) || s.Brand.Contains(searchString) || s.Shortdescription.Contains(searchString) || s.FullDescription.Contains(searchString));
+            }
+
+            return View(products);
         }
 
-        // GET: Admin/Products/Details/5
+        // GET: Products/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,13 +42,13 @@ namespace Plus1.Areas.Admin.Controllers
             return View(product);
         }
 
-        // GET: Admin/Products/Create
+        // GET: Products/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/Products/Create
+        // POST: Products/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -58,7 +65,7 @@ namespace Plus1.Areas.Admin.Controllers
             return View(product);
         }
 
-        // GET: Admin/Products/Edit/5
+        // GET: Products/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,7 +80,7 @@ namespace Plus1.Areas.Admin.Controllers
             return View(product);
         }
 
-        // POST: Admin/Products/Edit/5
+        // POST: Products/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,7 +96,7 @@ namespace Plus1.Areas.Admin.Controllers
             return View(product);
         }
 
-        // GET: Admin/Products/Delete/5
+        // GET: Products/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +111,7 @@ namespace Plus1.Areas.Admin.Controllers
             return View(product);
         }
 
-        // POST: Admin/Products/Delete/5
+        // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

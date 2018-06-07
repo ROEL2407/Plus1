@@ -196,18 +196,30 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomePageController.cs" />
-    <Compile Include="Areas\Admin\Controllers\NewsArticlesController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806061036040_init.cs" />
-    <Compile Include="Migrations\201806061036040_init.Designer.cs">
-      <DependentUpon>201806061036040_init.cs</DependentUpon>
+    <Compile Include="Migrations\201806050759452_Init.cs" />
+    <Compile Include="Migrations\201806050759452_Init.Designer.cs">
+      <DependentUpon>201806050759452_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806051047317_Product.cs" />
+    <Compile Include="Migrations\201806051047317_Product.Designer.cs">
+      <DependentUpon>201806051047317_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806061723277_first.cs" />
+    <Compile Include="Migrations\201806061723277_first.Designer.cs">
+      <DependentUpon>201806061723277_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806061908142_second.cs" />
+    <Compile Include="Migrations\201806061908142_second.Designer.cs">
+      <DependentUpon>201806061908142_second.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -388,17 +400,12 @@
     <Content Include="Areas\Admin\Template\vendor\font-awesome\scss\_spinning.scss" />
     <Content Include="Areas\Admin\Template\vendor\font-awesome\scss\_stacked.scss" />
     <Content Include="Areas\Admin\Template\vendor\font-awesome\scss\_variables.scss" />
-    <Content Include="Areas\Admin\Views\Products\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Products\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Products\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
     <Content Include="Areas\Admin\Views\HomePage\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\NewsArticles\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\NewsArticles\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\NewsArticles\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\NewsArticles\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\NewsArticles\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProducts\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProducts\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProducts\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProducts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProducts\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -410,6 +417,103 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Template\css\bootstrap.css" />
+    <Content Include="Template\css\font-awesome.css" />
+    <Content Include="Template\css\skdslider.css" />
+    <Content Include="Template\css\style.css" />
+    <Content Include="Template\images\1.png" />
+    <Content Include="Template\images\10.png" />
+    <Content Include="Template\images\11.jpg" />
+    <Content Include="Template\images\111.jpg" />
+    <Content Include="Template\images\12.png" />
+    <Content Include="Template\images\13.png" />
+    <Content Include="Template\images\14.png" />
+    <Content Include="Template\images\15.png" />
+    <Content Include="Template\images\16.png" />
+    <Content Include="Template\images\17.png" />
+    <Content Include="Template\images\2.png" />
+    <Content Include="Template\images\22.jpg" />
+    <Content Include="Template\images\3.png" />
+    <Content Include="Template\images\4.png" />
+    <Content Include="Template\images\44.jpg" />
+    <Content Include="Template\images\5.png" />
+    <Content Include="Template\images\6.png" />
+    <Content Include="Template\images\7.png" />
+    <Content Include="Template\images\8.png" />
+    <Content Include="Template\images\9.png" />
+    <Content Include="Template\images\arrow.png" />
+    <Content Include="Template\images\b1.jpg" />
+    <Content Include="Template\images\b3.jpg" />
+    <Content Include="Template\images\bv1.png" />
+    <Content Include="Template\images\bv2.png" />
+    <Content Include="Template\images\bv3.png" />
+    <Content Include="Template\images\bv4.png" />
+    <Content Include="Template\images\bv5.png" />
+    <Content Include="Template\images\bv6.png" />
+    <Content Include="Template\images\bv7.png" />
+    <Content Include="Template\images\bv8.jpg" />
+    <Content Include="Template\images\bv8.png" />
+    <Content Include="Template\images\bv9.png" />
+    <Content Include="Template\images\card.png" />
+    <Content Include="Template\images\check.png" />
+    <Content Include="Template\images\close_1.png" />
+    <Content Include="Template\images\gu1.png" />
+    <Content Include="Template\images\gu2.png" />
+    <Content Include="Template\images\gu3.png" />
+    <Content Include="Template\images\gu4.png" />
+    <Content Include="Template\images\gu5.png" />
+    <Content Include="Template\images\gu6.png" />
+    <Content Include="Template\images\gu7.png" />
+    <Content Include="Template\images\gu8.png" />
+    <Content Include="Template\images\gu9.png" />
+    <Content Include="Template\images\hh1.png" />
+    <Content Include="Template\images\hh2.png" />
+    <Content Include="Template\images\hh3.png" />
+    <Content Include="Template\images\hh4.png" />
+    <Content Include="Template\images\hh5.png" />
+    <Content Include="Template\images\hh6.png" />
+    <Content Include="Template\images\hh7.png" />
+    <Content Include="Template\images\hh8.png" />
+    <Content Include="Template\images\hh9.png" />
+    <Content Include="Template\images\icon1.png" />
+    <Content Include="Template\images\icon2.png" />
+    <Content Include="Template\images\offer.png" />
+    <Content Include="Template\images\p2.jpg" />
+    <Content Include="Template\images\p3.jpg" />
+    <Content Include="Template\images\p4.jpg" />
+    <Content Include="Template\images\pc1.png" />
+    <Content Include="Template\images\pc2.png" />
+    <Content Include="Template\images\pc3.png" />
+    <Content Include="Template\images\pc4.png" />
+    <Content Include="Template\images\pc5.png" />
+    <Content Include="Template\images\pc6.png" />
+    <Content Include="Template\images\pc7.png" />
+    <Content Include="Template\images\pc8.png" />
+    <Content Include="Template\images\pc9.jpg" />
+    <Content Include="Template\images\pf1.png" />
+    <Content Include="Template\images\pf2.png" />
+    <Content Include="Template\images\pf3.png" />
+    <Content Include="Template\images\pf4.png" />
+    <Content Include="Template\images\pf5.png" />
+    <Content Include="Template\images\pf6.png" />
+    <Content Include="Template\images\pf7.png" />
+    <Content Include="Template\images\pf8.png" />
+    <Content Include="Template\images\pf9.png" />
+    <Content Include="Template\images\si1.jpg" />
+    <Content Include="Template\images\star.png" />
+    <Content Include="Template\images\star1.png" />
+    <Content Include="Template\images\t1.jpg" />
+    <Content Include="Template\images\t2.jpg" />
+    <Content Include="Template\images\t3.jpg" />
+    <Content Include="Template\images\t4.jpg" />
+    <Content Include="Template\images\tick.png" />
+    <Content Include="Template\js\bootstrap.min.js" />
+    <Content Include="Template\js\easing.js" />
+    <Content Include="Template\js\jquery-1.11.1.min.js" />
+    <Content Include="Template\js\minicart.min.js" />
+    <Content Include="Template\js\move-top.js" />
+    <Content Include="Template\js\responsiveslides.min.js" />
+    <Content Include="Template\js\skdslider.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -446,6 +550,20 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Template\fonts\fontawesome-webfont.eot" />
+    <Content Include="Template\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Template\fonts\fontawesome-webfont.woff" />
+    <Content Include="Template\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Template\fonts\FontAwesome.otf" />
+    <Content Include="Template\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Template\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Template\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Template\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -465,8 +583,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806061036040_init.resx">
-      <DependentUpon>201806061036040_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806050759452_Init.resx">
+      <DependentUpon>201806050759452_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806051047317_Product.resx">
+      <DependentUpon>201806051047317_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806061723277_first.resx">
+      <DependentUpon>201806061723277_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806061908142_second.resx">
+      <DependentUpon>201806061908142_second.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -483,7 +610,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52447</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

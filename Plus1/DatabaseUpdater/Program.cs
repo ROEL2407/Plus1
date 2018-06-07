@@ -14,14 +14,13 @@ namespace DatabaseUpdater
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Start Product Table Routine");
             UpdateProductTable();
-            Console.WriteLine("Finished Product Table Routine");
             Console.ReadKey();
         }
 
         static void UpdateProductTable()
         {
+             Console.WriteLine("Start Product Table Routine");
             XmlDocument doc = new XmlDocument();
             doc.Load( BaseURL + "products");
             string xmlcontents = doc.InnerXml;
@@ -33,16 +32,17 @@ namespace DatabaseUpdater
             {
                 Console.WriteLine("Inserting: " + xndNode["Title"].InnerText);
 
-                using (var connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=aspnet-Plus1-20180514115049;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
+                using (var connection = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=C:\Users\koenw\Source\Repos\Plus1\Plus1\Plus1\App_Data\aspnet-Plus1-20180514115049.mdf;Initial Catalog=aspnet-Plus1-20180514115049;Integrated Security=True"))
                 {
                     connection.Open();
-                    var sql = "INSERT INTO Products(EAN, Title, Brand, Shortdescription, FullDescription, Weight, Price) VALUES(@EAN, @Title, @Brand, @ShortDescription, @FullDescription, @Weight, @Price)";
+                    var sql = "INSERT INTO Products(EAN, Title, Brand, Shortdescription, FullDescription, Image, Weight, Price) VALUES(@EAN, @Title, @Brand, @ShortDescription, @FullDescription, @Image, @Weight, @Price)";
                     using (var cmd = new SqlCommand(sql, connection))
                     {
                         cmd.Parameters.AddWithValue("@EAN", xndNode["EAN"].InnerText);
                         cmd.Parameters.AddWithValue("@Title", xndNode["Title"].InnerText);
                         cmd.Parameters.AddWithValue("@Brand", xndNode["Brand"].InnerText);
                         cmd.Parameters.AddWithValue("@ShortDescription", xndNode["Shortdescription"].InnerText);
+                        cmd.Parameters.AddWithValue("@Image", xndNode["Image"].InnerText);
                         cmd.Parameters.AddWithValue("@FullDescription", xndNode["Fulldescription"].InnerText);
                         cmd.Parameters.AddWithValue("@Weight", xndNode["Weight"].InnerText);
                         cmd.Parameters.AddWithValue("@Price", xndNode["Price"].InnerText);
@@ -50,7 +50,8 @@ namespace DatabaseUpdater
                     }
                 }
             }
-        }
+            Console.WriteLine("Finished Product Table Routine");
+        }  
 
     
     }

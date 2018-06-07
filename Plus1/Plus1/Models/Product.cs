@@ -13,7 +13,7 @@ namespace Plus1.Models
         public string Brand { get; set; }
         public string Shortdescription { get; set; }
         public string FullDescription { get; set; }
-       // public image
+        public string Image { get; set; }
         public string Weight { get; set; }
         public decimal Price { get; set; }
       //  public int CategoryID { get; set; }
