@@ -12,9 +12,17 @@ namespace Plus1.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        public ActionResult Index()
-        {
-            return View(db.Products.ToList());
+        // GET: Products
+        public ActionResult Index(string searchString) { 
+       
+            var products = from m in db.Products select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                products = products.Where(s => s.Title.Contains(searchString) || s.Brand.Contains(searchString));
+            }
+
+            return View(products);
         }
 
         public ActionResult About()

@@ -12,12 +12,19 @@ namespace Plus1.Controllers
 {
     public class ProductsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Products
-        public ActionResult Index()
-        {
-            return View(db.Products.ToList());
+        public ActionResult Index(string searchString) { 
+       
+            var products = from m in db.Products select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                products = products.Where(s => s.Title.Contains(searchString) || s.Brand.Contains(searchString) || s.Shortdescription.Contains(searchString) || s.FullDescription.Contains(searchString));
+            }
+
+            return View(products);
         }
 
         // GET: Products/Details/5

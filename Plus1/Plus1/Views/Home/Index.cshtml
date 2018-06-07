@@ -64,15 +64,9 @@
                                             <figure>
                                                 <div class="snipcart-item block">
                                                     <div class="snipcart-thumb">
-                                                        <a href="products.html"><img src="@Html.DisplayFor(modelItem => item.Image)" alt="" class="img-responsive" /></a>
+                                                        <a href=/Products/Details/@Html.DisplayFor(modelItem => item.ProductID) \"><img src="@Html.DisplayFor(modelItem => item.Image)" alt="" class="img-responsive" /></a>
                                                         <p>  @Html.DisplayFor(modelItem => item.Title)</p>
-                                                        <div class="stars">
-                                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star gray-star" aria-hidden="true"></i>
-                                                        </div>
+                                                        <p>Merk: @Html.DisplayFor(modelItem => item.Brand)</p>
                                                         <h4>
                                                             @Html.DisplayFor(modelItem => item.Price) <span>$99.00</span>
                                                         </h4>
@@ -90,8 +84,7 @@
                                                                 <input type="hidden" name="return" value=" " />
                                                                 <input type="hidden" name="cancel_return" value=" " />
                                                                 <input type="submit" name="submit" value="Add to cart" class="button" />
-                                                                @Html.ActionLink("Details", "Details", new { id = item.ProductID })
-                                                            </fieldset>
+</fieldset>
                                                         </form>
                                                     </div>
                                                 </div>
