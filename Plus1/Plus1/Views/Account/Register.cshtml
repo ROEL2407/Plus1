@@ -3,6 +3,36 @@
     ViewBag.Title = "Register";
 }
 
+<h1>ONDERAAN REGISTREREN!</h1>
+<h1>ONDERAAN REGISTREREN!</h1>
+<h1>ONDERAAN REGISTREREN!</h1>
+<h1>ONDERAAN REGISTREREN!</h1>
+<h1>ONDERAAN REGISTREREN!</h1>
+
+<div class="register">
+    <div class="container">
+        <h2>@ViewBag.Title.</h2>
+        <div class="login-form-grids">
+            <h5>Persoonlijke gegevens</h5>
+            <form action="#" method="post">
+                <input type="text" placeholder="Voornaam..." required=" ">
+                <input type="text" placeholder="Tussenvoegsel...">
+                <input type="text" placeholder="Achternaam..." required=" ">
+            </form>
+           
+            <h6>Login Informatie</h6>
+            <form action="#" method="post">
+                <input type="email" placeholder="Email Adres" required=" ">
+                <input type="password" placeholder="Wachtwoord" required=" ">
+                <input type="password" placeholder="Wachtwoord Bevestigen" required=" ">
+               
+                <input type="submit" value="Register">
+            </form>
+        </div>
+       
+    </div>
+</div>
+
 <h2>@ViewBag.Title.</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
