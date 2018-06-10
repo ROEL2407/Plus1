@@ -198,6 +198,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomePageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsArticlesController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -205,17 +206,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806061723277_first.cs" />
-    <Compile Include="Migrations\201806061723277_first.Designer.cs">
-      <DependentUpon>201806061723277_first.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806061908142_second.cs" />
-    <Compile Include="Migrations\201806061908142_second.Designer.cs">
-      <DependentUpon>201806061908142_second.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806091359236_MigrationFix.cs" />
-    <Compile Include="Migrations\201806091359236_MigrationFix.Designer.cs">
-      <DependentUpon>201806091359236_MigrationFix.cs</DependentUpon>
+    <Compile Include="Migrations\201806101202496_Init.cs" />
+    <Compile Include="Migrations\201806101202496_Init.Designer.cs">
+      <DependentUpon>201806101202496_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -402,6 +395,11 @@
     <Content Include="Areas\Admin\Views\AdminProducts\Details.cshtml" />
     <Content Include="Areas\Admin\Views\AdminProducts\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\AdminProducts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsArticles\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsArticles\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsArticles\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsArticles\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsArticles\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -579,14 +577,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806061723277_first.resx">
-      <DependentUpon>201806061723277_first.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806061908142_second.resx">
-      <DependentUpon>201806061908142_second.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806091359236_MigrationFix.resx">
-      <DependentUpon>201806091359236_MigrationFix.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806101202496_Init.resx">
+      <DependentUpon>201806101202496_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
