@@ -37,16 +37,13 @@ namespace Plus1.Areas.Admin.Controllers
         }
 
 
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create(NewsArticle model)
         {
          
                 var db = new ApplicationDbContext();
 
 
-              
+          
 
                 db.NewsArticles.Add(new NewsArticle
                 {
@@ -58,32 +55,17 @@ namespace Plus1.Areas.Admin.Controllers
 
 
                 });
+            
                 db.SaveChanges();
-             
             
 
-            return View();
+
+          return View();
         }
 
 
 
 
-        // POST: Admin/NewsArticles/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ArticleID,Title,Content,Date,AuthorId")] NewsArticle newsArticle)
-        {
-            if (ModelState.IsValid)
-            {
-                db.NewsArticles.Add(newsArticle);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            
-            return View(newsArticle);
-        }
 
         // GET: Admin/NewsArticles/Edit/5
         public ActionResult Edit(int? id)
@@ -97,6 +79,7 @@ namespace Plus1.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+
             return View(newsArticle);
         }
 
