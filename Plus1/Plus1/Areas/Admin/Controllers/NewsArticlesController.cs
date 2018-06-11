@@ -36,11 +36,37 @@ namespace Plus1.Areas.Admin.Controllers
             return View(newsArticle);
         }
 
-        // GET: Admin/NewsArticles/Create
-        public ActionResult Create()
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(NewsArticle model)
         {
+         
+                var db = new ApplicationDbContext();
+
+
+              
+
+                db.NewsArticles.Add(new NewsArticle
+                {
+                    ArticleID = model.ArticleID,
+                    Title = model.Title,
+                    Content = model.Content,
+                    Date = DateTime.Now
+
+
+
+                });
+                db.SaveChanges();
+             
+            
+
             return View();
         }
+
+
+
 
         // POST: Admin/NewsArticles/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
