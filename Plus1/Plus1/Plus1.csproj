@@ -210,6 +210,10 @@
     <Compile Include="Migrations\201806101202496_Init.Designer.cs">
       <DependentUpon>201806101202496_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806120833390_Roles.cs" />
+    <Compile Include="Migrations\201806120833390_Roles.Designer.cs">
+      <DependentUpon>201806120833390_Roles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -579,6 +583,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806101202496_Init.resx">
       <DependentUpon>201806101202496_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806120833390_Roles.resx">
+      <DependentUpon>201806120833390_Roles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
