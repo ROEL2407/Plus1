@@ -50,6 +50,20 @@ namespace Plus1.Controllers
             }
         }
 
+        ApplicationDbContext db = new ApplicationDbContext();
+
+        // made by koen
+        public ActionResult Overview()
+        {
+
+            var UserInfo = from m in db.Users select m;
+
+         
+   
+            return View(UserInfo);
+        }
+
+
         //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)

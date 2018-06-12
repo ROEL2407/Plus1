@@ -83,6 +83,14 @@ namespace Plus1.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        public string Firstname { get; set; }
+        public string Surname { get; set; }
+        public string Address { get; set; }
+        public string Zipcode { get; set; }
+        public string City { get; set; }
+
+
     }
 
     public class ResetPasswordViewModel

@@ -16,7 +16,6 @@ namespace Plus1.Models
         public string Zipcode { get; set; }
         public string City { get; set; }
 
-
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -39,10 +38,14 @@ namespace Plus1.Models
         }
 
         public DbSet<Product> Products { get; set; }
-      
+
+
 
         public System.Data.Entity.DbSet<Plus1.Models.Cart> Carts { get; set; }
 
         public System.Data.Entity.DbSet<Plus1.Models.NewsArticle> NewsArticles { get; set; }
+
     }
+
+
 }

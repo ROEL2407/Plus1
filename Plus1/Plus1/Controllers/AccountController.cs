@@ -148,11 +148,15 @@ namespace Plus1.Controllers
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
-        {
+        {   
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, UserRole = model.UserRole };
+
+
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, UserRole = model.UserRole, Firstname = model.Firstname, Surname = model.Surname, Address = model.Address, Zipcode = model.Zipcode, City = model.City };
                 var result = await UserManager.CreateAsync(user, model.Password);
+
+
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);

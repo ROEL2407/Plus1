@@ -13,7 +13,7 @@ namespace Plus1
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
-            createRoles();
+           // createRoles();
         }
 
         private void createRoles()
