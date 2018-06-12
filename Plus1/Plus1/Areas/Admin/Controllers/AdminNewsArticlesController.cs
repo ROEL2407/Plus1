@@ -10,19 +10,17 @@ using Plus1.Models;
 
 namespace Plus1.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin, Webredacteur")]
-    public class NewsArticlesController : Controller
+    public class AdminNewsArticlesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Admin/NewsArticles
+        // GET: Admin/AdminNewsArticles
         public ActionResult Index()
         {
-            var newsArticles = db.NewsArticles.Include(n => n.Author);
-            return View(newsArticles.ToList());
+            return View(db.NewsArticles.ToList());
         }
 
-        // GET: Admin/NewsArticles/Details/5
+        // GET: Admin/AdminNewsArticles/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,38 +35,30 @@ namespace Plus1.Areas.Admin.Controllers
             return View(newsArticle);
         }
 
-
-        public ActionResult Create(NewsArticle model)
+        // GET: Admin/AdminNewsArticles/Create
+        public ActionResult Create()
         {
-         
-                var db = new ApplicationDbContext();
-
-
-          
-
-                db.NewsArticles.Add(new NewsArticle
-                {
-                    ArticleID = model.ArticleID,
-                    Title = model.Title,
-                    Content = model.Content,
-                    Date = DateTime.Now
-
-
-
-                });
-            
-                db.SaveChanges();
-            
-
-
-          return View();
+            return View();
         }
 
+        // POST: Admin/AdminNewsArticles/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "NewsArticleID,Title,Content,Date")] NewsArticle newsArticle)
+        {
+            if (ModelState.IsValid)
+            {
+                db.NewsArticles.Add(newsArticle);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
+            return View(newsArticle);
+        }
 
-
-
-        // GET: Admin/NewsArticles/Edit/5
+        // GET: Admin/AdminNewsArticles/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,16 +70,15 @@ namespace Plus1.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-
             return View(newsArticle);
         }
 
-        // POST: Admin/NewsArticles/Edit/5
+        // POST: Admin/AdminNewsArticles/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ArticleID,Title,Content,Date,AuthorId")] NewsArticle newsArticle)
+        public ActionResult Edit([Bind(Include = "NewsArticleID,Title,Content,Date")] NewsArticle newsArticle)
         {
             if (ModelState.IsValid)
             {
@@ -100,7 +89,7 @@ namespace Plus1.Areas.Admin.Controllers
             return View(newsArticle);
         }
 
-        // GET: Admin/NewsArticles/Delete/5
+        // GET: Admin/AdminNewsArticles/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -115,7 +104,7 @@ namespace Plus1.Areas.Admin.Controllers
             return View(newsArticle);
         }
 
-        // POST: Admin/NewsArticles/Delete/5
+        // POST: Admin/AdminNewsArticles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

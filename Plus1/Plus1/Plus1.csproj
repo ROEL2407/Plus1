@@ -57,8 +57,10 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -196,9 +198,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminNewsArticlesController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomePageController.cs" />
-    <Compile Include="Areas\Admin\Controllers\NewsArticlesController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -206,9 +208,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806101202496_Init.cs" />
-    <Compile Include="Migrations\201806101202496_Init.Designer.cs">
-      <DependentUpon>201806101202496_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201806120948384_kk.cs" />
+    <Compile Include="Migrations\201806120948384_kk.Designer.cs">
+      <DependentUpon>201806120948384_kk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806120952064_fixAll.cs" />
+    <Compile Include="Migrations\201806120952064_fixAll.Designer.cs">
+      <DependentUpon>201806120952064_fixAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806120954218_Tom.cs" />
+    <Compile Include="Migrations\201806120954218_Tom.Designer.cs">
+      <DependentUpon>201806120954218_Tom.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -395,11 +405,11 @@
     <Content Include="Areas\Admin\Views\AdminProducts\Details.cshtml" />
     <Content Include="Areas\Admin\Views\AdminProducts\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\AdminProducts\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\NewsArticles\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\NewsArticles\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\NewsArticles\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\NewsArticles\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\NewsArticles\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminNewsArticles\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminNewsArticles\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminNewsArticles\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminNewsArticles\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminNewsArticles\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -577,8 +587,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806101202496_Init.resx">
-      <DependentUpon>201806101202496_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806120948384_kk.resx">
+      <DependentUpon>201806120948384_kk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806120952064_fixAll.resx">
+      <DependentUpon>201806120952064_fixAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806120954218_Tom.resx">
+      <DependentUpon>201806120954218_Tom.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
