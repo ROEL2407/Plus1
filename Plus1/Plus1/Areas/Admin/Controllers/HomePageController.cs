@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Plus1.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class HomePageController : Controller
     {
         // GET: Admin/HomePage
