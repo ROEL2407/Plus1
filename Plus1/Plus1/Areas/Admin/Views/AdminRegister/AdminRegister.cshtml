@@ -1,7 +1,6 @@
 ﻿@model Plus1.Models.RegisterViewModel
-
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "AdminRegister";
 }
 
 <h1>ONDERAAN REGISTREREN!</h1>
@@ -81,12 +80,11 @@
         @Html.LabelFor(m => m.UserRole, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
 
-            @* @if (User.IsInRole("Admin"))
-        {
-                *@
-            @Html.RadioButtonFor(m => m.UserRole, "Admin", new { @class = "radio-inline" })@Html.Label("Admin")
-            @Html.RadioButtonFor(m => m.UserRole, "Webredacteur", new { @class = "radio-inline" })@Html.Label("Webredacteur")
-            @*}*@
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.RadioButtonFor(m => m.UserRole, "Admin", new { @class = "radio-inline" })@Html.Label("Admin")
+                @Html.RadioButtonFor(m => m.UserRole, "Webredacteur", new { @class = "radio-inline" })@Html.Label("Webredacteur")
+            }
             @Html.RadioButtonFor(m => m.UserRole, "Bezoeker", new { @class = "radio-inline" })@Html.Label("Bezoeker")
 
         </div>

@@ -200,6 +200,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminNewsArticlesController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminProductsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminRegisterController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomePageController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -208,29 +209,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806120948384_kk.cs" />
-    <Compile Include="Migrations\201806120948384_kk.Designer.cs">
-      <DependentUpon>201806120948384_kk.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806120952064_fixAll.cs" />
-    <Compile Include="Migrations\201806120952064_fixAll.Designer.cs">
-      <DependentUpon>201806120952064_fixAll.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806120954218_Tom.cs" />
-    <Compile Include="Migrations\201806120954218_Tom.Designer.cs">
-      <DependentUpon>201806120954218_Tom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806120833390_Roles.cs" />
-    <Compile Include="Migrations\201806120833390_Roles.Designer.cs">
-      <DependentUpon>201806120833390_Roles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806121126024_MigrationHate.cs" />
-    <Compile Include="Migrations\201806121126024_MigrationHate.Designer.cs">
-      <DependentUpon>201806121126024_MigrationHate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806121150518_UserRegister.cs" />
-    <Compile Include="Migrations\201806121150518_UserRegister.Designer.cs">
-      <DependentUpon>201806121150518_UserRegister.cs</DependentUpon>
+    <Compile Include="Migrations\201806130852247_Init.cs" />
+    <Compile Include="Migrations\201806130852247_Init.Designer.cs">
+      <DependentUpon>201806130852247_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -422,6 +403,7 @@
     <Content Include="Areas\Admin\Views\AdminNewsArticles\Details.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNewsArticles\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNewsArticles\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminRegister\AdminRegister.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -599,23 +581,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806120948384_kk.resx">
-      <DependentUpon>201806120948384_kk.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806120952064_fixAll.resx">
-      <DependentUpon>201806120952064_fixAll.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806120954218_Tom.resx">
-      <DependentUpon>201806120954218_Tom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806120833390_Roles.resx">
-      <DependentUpon>201806120833390_Roles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806121126024_MigrationHate.resx">
-      <DependentUpon>201806121126024_MigrationHate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806121150518_UserRegister.resx">
-      <DependentUpon>201806121150518_UserRegister.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806130852247_Init.resx">
+      <DependentUpon>201806130852247_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

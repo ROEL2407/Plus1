@@ -35,11 +35,33 @@ namespace Plus1.Areas.Admin.Controllers
             return View(newsArticle);
         }
 
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(NewsArticle model)
+        {
+            var db = new ApplicationDbContext();
+
+
+            db.NewsArticles.Add(new NewsArticle
+            {
+                NewsArticleID = model.NewsArticleID,
+                Title = model.Title,
+                Content = model.Content,
+                Date = DateTime.Now
+            });
+            db.SaveChanges();
+            //return RedirectToAction("index");
+
+
+            return View(model);
+        }
+
         // GET: Admin/AdminNewsArticles/Create
         public ActionResult Create()
         {
             return View();
-        }
+        }/*
 
         // POST: Admin/AdminNewsArticles/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -56,7 +78,7 @@ namespace Plus1.Areas.Admin.Controllers
             }
 
             return View(newsArticle);
-        }
+        }*/
 
         // GET: Admin/AdminNewsArticles/Edit/5
         public ActionResult Edit(int? id)
