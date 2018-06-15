@@ -1,40 +1,13 @@
 ﻿@model Plus1.Models.RegisterViewModel
 
 @{
+    /**/
+
     ViewBag.Title = "Register";
 }
 
-<h1>ONDERAAN REGISTREREN!</h1>
-<h1>ONDERAAN REGISTREREN!</h1>
-<h1>ONDERAAN REGISTREREN!</h1>
-<h1>ONDERAAN REGISTREREN!</h1>
-<h1>ONDERAAN REGISTREREN!</h1>
 
-<div class="register">
-    <div class="container">
-        <h2>@ViewBag.Title.</h2>
-        <div class="login-form-grids">
-            <h5>Persoonlijke gegevens</h5>
-            <form action="#" method="post">
-                <input type="text" placeholder="Voornaam..." required=" ">
-                <input type="text" placeholder="Tussenvoegsel...">
-                <input type="text" placeholder="Achternaam..." required=" ">
-            </form>
 
-            <h6>Login Informatie</h6>
-            <form action="#" method="post">
-                <input type="email" placeholder="Email Adres" required=" ">
-                <input type="password" placeholder="Wachtwoord" required=" ">
-                <input type="password" placeholder="Wachtwoord Bevestigen" required=" ">
-
-                <input type="submit" value="Register">
-            </form>
-        </div>
-
-    </div>
-</div>
-
-<h2>@ViewBag.Title.</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
@@ -42,56 +15,40 @@
     <h4>Create a new account.</h4>
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
+    <div class="register">
+        <div class="container">
+            <h2>@ViewBag.Title.</h2>
+            <div class="login-form-grids">
+                <h5>Persoonlijke gegevens</h5>
+                <form action="#" method="post">
+                    @Html.TextBoxFor(m => m.Firstname, new { placeholder = "Voornaam...", @class = "form-control" })
+                    @Html.TextBoxFor(m => m.Surname, new { placeholder = "Achternaam...", @class = "form-control" })
+                </form>
 
+                <h6>Login Informatie</h6>
+                <form action="#" method="post">
+                    @Html.TextBoxFor(m => m.Email, new { placeholder = "Email Adres", @class = "form-control" })
+                    @Html.PasswordFor(m => m.Password, new { placeholder = "Wachtwoord", @class = "form-control" })
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { placeholder = "Wachtwoord Bevestigen", @class = "form-control" })
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.Firstname, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Firstname, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Surname, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Surname, new { @class = "form-control" })
-        </div>
-    </div>
+                    @Html.LabelFor(m => m.UserRole, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
 
+                        @* @if (User.IsInRole("Admin"))
+                            {
+                        *@
+                        @Html.RadioButtonFor(m => m.UserRole, "Admin", new { @class = "radio-inline" })@Html.Label("Admin")
+                        @Html.RadioButtonFor(m => m.UserRole, "Webredacteur", new { @class = "radio-inline" })@Html.Label("Webredacteur")
+                        @*}*@
+                        @Html.RadioButtonFor(m => m.UserRole, "Bezoeker", new { @class = "radio-inline" })@Html.Label("Bezoeker")
 
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.UserRole, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-
-            @* @if (User.IsInRole("Admin"))
-        {
-                *@
-            @Html.RadioButtonFor(m => m.UserRole, "Admin", new { @class = "radio-inline" })@Html.Label("Admin")
-            @Html.RadioButtonFor(m => m.UserRole, "Webredacteur", new { @class = "radio-inline" })@Html.Label("Webredacteur")
-            @*}*@
-            @Html.RadioButtonFor(m => m.UserRole, "Bezoeker", new { @class = "radio-inline" })@Html.Label("Bezoeker")
+                    </div>
+                    <input type="submit" value="Register">
+                </form>
+            </div>
 
         </div>
     </div>
-
 
 
 

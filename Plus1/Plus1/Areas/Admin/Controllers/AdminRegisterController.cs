@@ -14,12 +14,16 @@ namespace Plus1.Areas.Admin.Controllers
     public class AdminRegisterController : Controller
     {
         // GET: Admin/AdminRegister
-        public ActionResult Index()
+        public ActionResult AdminRegister()
         {
             return View();
         }
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+
+        public AdminRegisterController()
+        {
+        }
 
         public AdminRegisterController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
