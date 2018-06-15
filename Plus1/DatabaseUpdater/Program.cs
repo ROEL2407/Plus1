@@ -1,59 +1,80 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using Console = Colorful.Console;
 
 namespace DatabaseUpdater
 {
+/*
+------------------------------------------------------------
+|                                                          |
+|                   DatabaseUpdater                        |         
+|                   Version: 1.5                           |
+|                   By Tom                                 |
+|                                                          |
+------------------------------------------------------------
+ */
     class Program
     {
-        static string BaseURL = "http://supermaco.starwave.nl/api/";
-
+        public string BaseURL = "http://supermaco.starwave.nl/api/";
+        public string ConnectionString = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=C:\Users\Tom\Documents\GitHub\Plus1\Plus1\Plus1\App_Data\aspnet-Plus1-20180514115049.mdf;Initial Catalog=aspnet-Plus1-20180514115049;Integrated Security=True";
         static void Main(string[] args)
         {
-            UpdateProductTable();
-            Console.ReadKey();
+            ShowOptions();
+        }
+        static void ShowOptions()
+        {
+            int DA = 244;
+            int V = 212;
+            int ID = 255;
+            for (int i = 0; i < 1; i++)
+            {
+                Console.WriteAscii("DatabaseUpdater V1.5", Color.FromArgb(DA, V, ID));
+
+                DA -= 18;
+                V -= 36;
+            }
+            Console.WriteLine("What do you want to update?");
+            string input = Console.ReadLine();
+
+            ProductUpdater ProductUpdater = new ProductUpdater();
+            CategoryUpdater CategoryUpdater = new CategoryUpdater();
+
+
+            switch (input)
+            {
+                case "products":
+                    ProductUpdater.Run();
+                break; 
+                case "categories":
+                    CategoryUpdater.Run();
+                break;
+                case "promotions":
+                break;
+                case "all":
+                    ProductUpdater.Run();
+                    CategoryUpdater.Run();
+
+                    break;
+                case "help":
+                    Console.WriteLine("- products");
+                    Console.WriteLine("- categories");
+                    Console.WriteLine("- all");
+                    ShowOptions();     
+                    break;
+                default:
+                    Console.WriteLine("Unknown Command: Use 'help' for all available commands.");
+                    ShowOptions();
+                break;
+            }
         }
 
-        static void UpdateProductTable()
-        {
-             Console.WriteLine("Start Product Table Routine");
-            XmlDocument doc = new XmlDocument();
-            doc.Load( BaseURL + "products");
-            string xmlcontents = doc.InnerXml;
 
-            XmlElement xelRoot = doc.DocumentElement;
-            XmlNodeList xnlNodes = xelRoot.SelectNodes("/Products/Product");
-
-            foreach (XmlNode xndNode in xnlNodes)
-            {
-                Console.WriteLine("Inserting: " + xndNode["Title"].InnerText);
-
-                using (var connection = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=C:\Users\koenw\Source\Repos\Plus1\Plus1\Plus1\App_Data\aspnet-Plus1-20180514115049.mdf;Initial Catalog=aspnet-Plus1-20180514115049;Integrated Security=True"))
-                {
-                    connection.Open();
-                    var sql = "INSERT INTO Products(EAN, Title, Brand, Shortdescription, FullDescription, Image, Weight, Price) VALUES(@EAN, @Title, @Brand, @ShortDescription, @FullDescription, @Image, @Weight, @Price)";
-                    using (var cmd = new SqlCommand(sql, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@EAN", xndNode["EAN"].InnerText);
-                        cmd.Parameters.AddWithValue("@Title", xndNode["Title"].InnerText);
-                        cmd.Parameters.AddWithValue("@Brand", xndNode["Brand"].InnerText);
-                        cmd.Parameters.AddWithValue("@ShortDescription", xndNode["Shortdescription"].InnerText);
-                        cmd.Parameters.AddWithValue("@Image", xndNode["Image"].InnerText);
-                        cmd.Parameters.AddWithValue("@FullDescription", xndNode["Fulldescription"].InnerText);
-                        cmd.Parameters.AddWithValue("@Weight", xndNode["Weight"].InnerText);
-                        cmd.Parameters.AddWithValue("@Price", xndNode["Price"].InnerText);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-            }
-            Console.WriteLine("Finished Product Table Routine");
-        }  
-
-    
     }
 }
 

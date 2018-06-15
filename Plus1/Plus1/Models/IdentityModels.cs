@@ -33,6 +33,9 @@ namespace Plus1.Models
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Category { get; set; }
+        public DbSet<SubCategory> SubCategory { get; set; }
+        public DbSet<SubSubCategory> SubSubCategory { get; set; }
         public DbSet<NewsArticle> NewsArticles { get; set; }
     }
 }

@@ -6,9 +6,11 @@ using System.Web;
 
 namespace Plus1.Models
 {
-    public class Category
+    public class SubSubCategory
     {
         [Key]
         public string Name { get; set; }
+
+        public SubCategory Parent { get; set; }
     }
 }

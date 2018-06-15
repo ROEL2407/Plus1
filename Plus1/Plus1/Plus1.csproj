@@ -206,15 +206,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806101202496_Init.cs" />
-    <Compile Include="Migrations\201806101202496_Init.Designer.cs">
-      <DependentUpon>201806101202496_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201806120841516_Categories.cs" />
+    <Compile Include="Migrations\201806120841516_Categories.Designer.cs">
+      <DependentUpon>201806120841516_Categories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806121230412_categrory_update.cs" />
+    <Compile Include="Migrations\201806121230412_categrory_update.Designer.cs">
+      <DependentUpon>201806121230412_categrory_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806130854192_NewID.cs" />
+    <Compile Include="Migrations\201806130854192_NewID.Designer.cs">
+      <DependentUpon>201806130854192_NewID.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\SubCategory.cs" />
     <Compile Include="Models\DeliverySlot.cs" />
     <Compile Include="Models\DeliverySlotID.cs" />
     <Compile Include="Models\DeliverySlotItem.cs" />
@@ -224,6 +233,7 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Promotion.cs" />
+    <Compile Include="Models\SubSubCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -577,8 +587,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806101202496_Init.resx">
-      <DependentUpon>201806101202496_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806120841516_Categories.resx">
+      <DependentUpon>201806120841516_Categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806121230412_categrory_update.resx">
+      <DependentUpon>201806121230412_categrory_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806130854192_NewID.resx">
+      <DependentUpon>201806130854192_NewID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
