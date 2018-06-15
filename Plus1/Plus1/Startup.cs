@@ -12,10 +12,10 @@ namespace Plus1
         
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
-          //  createRoles();
+           ConfigureAuth(app);
+           createRoles();
         }
-        /*
+
         private void createRoles()
         {
             ApplicationDbContext context = new ApplicationDbContext();
@@ -39,7 +39,6 @@ namespace Plus1
                 roleManager.Create(role);
             }
         }
-        */
 
     }
 }

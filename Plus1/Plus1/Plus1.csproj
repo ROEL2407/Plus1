@@ -57,8 +57,10 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -196,9 +198,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminNewsArticlesController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminProductsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminRegisterController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomePageController.cs" />
-    <Compile Include="Areas\Admin\Controllers\NewsArticlesController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -206,6 +209,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Migrations\201806120841516_Categories.cs" />
     <Compile Include="Migrations\201806120841516_Categories.Designer.cs">
       <DependentUpon>201806120841516_Categories.cs</DependentUpon>
@@ -219,6 +223,8 @@
       <DependentUpon>201806130854192_NewID.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+=======
+>>>>>>> 162ccd71e5868f9ca0481f4be2462d1bff18232d
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -405,11 +411,12 @@
     <Content Include="Areas\Admin\Views\AdminProducts\Details.cshtml" />
     <Content Include="Areas\Admin\Views\AdminProducts\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\AdminProducts\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\NewsArticles\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\NewsArticles\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\NewsArticles\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\NewsArticles\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\NewsArticles\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminNewsArticles\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminNewsArticles\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminNewsArticles\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminNewsArticles\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminNewsArticles\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminRegister\AdminRegister.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -572,6 +579,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -586,6 +594,7 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806120841516_Categories.resx">
       <DependentUpon>201806120841516_Categories.cs</DependentUpon>
@@ -597,6 +606,8 @@
       <DependentUpon>201806130854192_NewID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+=======
+>>>>>>> 162ccd71e5868f9ca0481f4be2462d1bff18232d
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

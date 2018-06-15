@@ -50,6 +50,20 @@ namespace Plus1.Controllers
             }
         }
 
+        ApplicationDbContext db = new ApplicationDbContext();
+
+        // made by koen
+        public ActionResult Overview()
+        {
+
+            var UserInfo = from m in db.Users select m;
+
+         
+   
+            return View(UserInfo);
+        }
+
+
         //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
@@ -64,13 +78,20 @@ namespace Plus1.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
+            var user = await UserManager.FindByIdAsync(userId);
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
+               Firstname = user.Firstname,
+               Surname = user.Surname,
+                Address = user.Address,
+                Zipcode = user.Zipcode,
+                City = user.City
+
             };
             return View(model);
         }
