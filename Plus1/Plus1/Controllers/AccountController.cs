@@ -153,7 +153,7 @@ namespace Plus1.Controllers
             {
 
 
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, UserRole = model.UserRole, Firstname = model.Firstname, Surname = model.Surname, Address = model.Address, Zipcode = model.Zipcode, City = model.City };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Firstname = model.Firstname, Surname = model.Surname, Address = model.Address, Zipcode = model.Zipcode, City = model.City };
                 var result = await UserManager.CreateAsync(user, model.Password);
 
 
@@ -166,7 +166,8 @@ namespace Plus1.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                    await this.UserManager.AddToRoleAsync(user.Id, model.UserRole);
+                    // await this.UserManager.AddToRoleAsync(user.Id, model.UserRole);
+                    await UserManager.AddToRoleAsync(user.Id, "Bezoeker");
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);

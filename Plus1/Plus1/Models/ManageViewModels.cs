@@ -12,6 +12,13 @@ namespace Plus1.Models
         public string PhoneNumber { get; set; }
         public bool TwoFactor { get; set; }
         public bool BrowserRemembered { get; set; }
+
+        public string Firstname { get; set; }
+        public string Surname { get; set; }
+        public string Address { get; set; }
+        public string Zipcode { get; set; }
+        public string City { get; set; }
+
     }
 
     public class ManageLoginsViewModel
