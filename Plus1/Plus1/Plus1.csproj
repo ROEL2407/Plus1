@@ -209,7 +209,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Migrations\201806120841516_Categories.cs" />
     <Compile Include="Migrations\201806120841516_Categories.Designer.cs">
       <DependentUpon>201806120841516_Categories.cs</DependentUpon>
@@ -223,8 +222,6 @@
       <DependentUpon>201806130854192_NewID.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-=======
->>>>>>> 162ccd71e5868f9ca0481f4be2462d1bff18232d
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -594,7 +591,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
-<<<<<<< HEAD
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806120841516_Categories.resx">
       <DependentUpon>201806120841516_Categories.cs</DependentUpon>
@@ -606,8 +602,6 @@
       <DependentUpon>201806130854192_NewID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-=======
->>>>>>> 162ccd71e5868f9ca0481f4be2462d1bff18232d
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
