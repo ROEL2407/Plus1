@@ -209,22 +209,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Migrations\201806120841516_Categories.cs" />
-    <Compile Include="Migrations\201806120841516_Categories.Designer.cs">
-      <DependentUpon>201806120841516_Categories.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806121230412_categrory_update.cs" />
-    <Compile Include="Migrations\201806121230412_categrory_update.Designer.cs">
-      <DependentUpon>201806121230412_categrory_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806130854192_NewID.cs" />
-    <Compile Include="Migrations\201806130854192_NewID.Designer.cs">
-      <DependentUpon>201806130854192_NewID.cs</DependentUpon>
+    <Compile Include="Migrations\201806180731451_Roelo.cs" />
+    <Compile Include="Migrations\201806180731451_Roelo.Designer.cs">
+      <DependentUpon>201806180731451_Roelo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-=======
->>>>>>> 162ccd71e5868f9ca0481f4be2462d1bff18232d
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -579,7 +568,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -594,20 +582,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
-<<<<<<< HEAD
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806120841516_Categories.resx">
-      <DependentUpon>201806120841516_Categories.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806121230412_categrory_update.resx">
-      <DependentUpon>201806121230412_categrory_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806130854192_NewID.resx">
-      <DependentUpon>201806130854192_NewID.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806180731451_Roelo.resx">
+      <DependentUpon>201806180731451_Roelo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-=======
->>>>>>> 162ccd71e5868f9ca0481f4be2462d1bff18232d
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -644,9 +623,9 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-       Other similar extension points exist, see Microsoft.Common.targets.
+       Other similar extension points exist, see Microsoft.Common.targets.  -->
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
-  </Target> -->
+  </Target>
 </Project>

@@ -38,20 +38,19 @@ namespace Plus1.Models
         }
 
         public DbSet<Product> Products { get; set; }
-<<<<<<< HEAD
+
         public DbSet<Category> Category { get; set; }
         public DbSet<SubCategory> SubCategory { get; set; }
         public DbSet<SubSubCategory> SubSubCategory { get; set; }
         public DbSet<NewsArticle> NewsArticles { get; set; }
-=======
+
 
 
 
         public System.Data.Entity.DbSet<Plus1.Models.Cart> Carts { get; set; }
 
-        public System.Data.Entity.DbSet<Plus1.Models.NewsArticle> NewsArticles { get; set; }
+       // public System.Data.Entity.DbSet<Plus1.Models.NewsArticle> NewsArticles { get; set; }
 
->>>>>>> 162ccd71e5868f9ca0481f4be2462d1bff18232d
     }
 
 
