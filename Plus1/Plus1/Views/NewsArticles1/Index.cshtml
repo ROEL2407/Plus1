@@ -1,0 +1,83 @@
+@model IEnumerable<Plus1.Models.NewsArticle>
+
+@{
+    ViewBag.Title = "Index";
+}
+<!-- top-brands -->
+<div class="top-brands">
+    <div class="container">
+        <div class="grid_3 grid_5">
+            <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                <div class="nieuwsartikel"><p>Nieuwsartikelen</p></div>
+                <div id="myTabContent" class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="expeditions" aria-labelledby="expeditions-tab">
+                        <div class="agile-tp">
+                            <h5>Nieuwsartikelen</h5>
+                            <p class="w3l-ad">Hier kunt u alle nieuwsartikelen lezen van Plus1.</p>
+                        </div>
+                        
+@if (true)
+    {
+
+
+        int nmb = 0;
+
+        foreach (var item in Model)
+        {
+
+            if (nmb == 0)
+            {
+
+
+                    @:<div class="agile_top_brands_grids">
+
+
+
+
+            }
+                    <div class="col-md-4 top_brand_left">
+                        <div class="hover14 column">
+                            <div class="agile_top_brand_left_grid">
+                                <div class="agile_top_brand_left_grid_pos">
+                                </div>
+                                <div class="agile_top_brand_left_grid1">
+                                    <figure>
+                                        <div class="snipcart-item block">
+                                            <div class="snipcart-thumb">
+                                                <a href=/NewsArticles1/Details/@Html.DisplayFor(modelItem => item.NewsArticleID) ></a>
+                                                    <p>@Html.DisplayFor(modelItem => item.Title)</p>
+                                                    <p>@Html.DisplayFor(modelItem => item.Content)</p>
+                                                    <p>@Html.DisplayFor(modelItem => item.Date)</p>
+                                            </div>
+                                            <div class="snipcart-details top_brand_home_details">
+
+                                                @Html.ActionLink("Details", "Details", new { id = item.NewsArticleID })
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+        if (nmb == 2)
+        {
+            nmb = -1;
+                              @:<div class="clearfix"></div></div>
+
+        }
+        nmb = nmb + 1;
+
+    }
+
+}
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //top-brands -->
