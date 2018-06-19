@@ -64,21 +64,23 @@ namespace DatabaseUpdater
             using (var connection = new SqlConnection(p.ConnectionString))
             {
                 connection.Open();
-                var sql = 
-                    "INSERT INTO Products(EAN, Title, Brand, Shortdescription, FullDescription, Image, Weight, Price) VALUES(@EAN, @Title, @Brand, @ShortDescription, @FullDescription, @Image, @Weight, @Price)";
-                using (var cmd = new SqlCommand(sql, connection))
+                foreach (Category cat in AllCat)
                 {
-                    /*
-                    cmd.Parameters.AddWithValue("@CatName", );
-                    cmd.Parameters.AddWithValue("@CatSub", );
-                    cmd.Parameters.AddWithValue("@", );
-                    cmd.Parameters.AddWithValue("@ShortDescription",);
-                    cmd.Parameters.AddWithValue("@Image",);
-                    cmd.Parameters.AddWithValue("@FullDescription",);
-                    cmd.Parameters.AddWithValue("@Weight",);
-                    cmd.Parameters.AddWithValue("@Price",);
-                    cmd.ExecuteNonQuery();
-                    */
+                    var sql = "INSERT INTO Categories(Name) VALUES(@Name)";
+                    using (var cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@Name", cat.Name);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                foreach (SubCategory subcat in AllSubCat)
+                {
+                    var sql = "INSERT INTO Categories(SubName) VALUES(@Name)";
+                    using (var cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@SubName", subcat.Name);
+                        cmd.ExecuteNonQuery();
+                    }
                 }
             }
         }

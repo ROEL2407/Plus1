@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Tom\Documents\GitHub\Plus1\Plus1\DatabaseUpdater\Product.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Tom\Documents\GitHub\Plus1\Plus1\DatabaseUpdater V2\Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

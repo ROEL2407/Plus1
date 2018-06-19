@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plus1", "Plus1\Plus1.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseUpdater", "DatabaseUpdater\DatabaseUpdater.csproj", "{4CC99D9B-D9FB-4700-BE82-C5D576D63B04}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseUpdater V2", "DatabaseUpdater V2\DatabaseUpdater V2.csproj", "{485DF6DD-5CF2-4491-AC9E-7BC99B275FE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4CC99D9B-D9FB-4700-BE82-C5D576D63B04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CC99D9B-D9FB-4700-BE82-C5D576D63B04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CC99D9B-D9FB-4700-BE82-C5D576D63B04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{485DF6DD-5CF2-4491-AC9E-7BC99B275FE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{485DF6DD-5CF2-4491-AC9E-7BC99B275FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{485DF6DD-5CF2-4491-AC9E-7BC99B275FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{485DF6DD-5CF2-4491-AC9E-7BC99B275FE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

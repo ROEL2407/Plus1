@@ -7,13 +7,13 @@ namespace Plus1.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Categories : IMigrationMetadata
+    public sealed partial class eindfix : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Categories));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(eindfix));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806120841516_Categories"; }
+            get { return "201806180944582_eindfix"; }
         }
         
         string IMigrationMetadata.Source

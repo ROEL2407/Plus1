@@ -12,6 +12,5 @@ namespace Plus1.Models
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime Date { get; set; }
-     //   public ApplicationUser Author { get; set; } hoeft eigenlijk niet
     }
 }
