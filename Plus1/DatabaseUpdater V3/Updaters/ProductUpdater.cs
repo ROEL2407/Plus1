@@ -1,34 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace DatabaseUpdater_V2
+namespace DatabaseUpdater_V3.Updaters
 {
-    class Program
+    class ProductUpdater
     {
-        /*
-        ------------------------------------------------------------
-        |                                                          |
-        |                   DatabaseUpdater                        |         
-        |                   Version: V2                             |
-        |                   By Tom                                 |
-        |                                                          |
-        ------------------------------------------------------------
-        */
-        static string BaseURL = "http://supermaco.starwave.nl/api/";
-        static void Main(string[] args)
-        {
-            ProductUpdate();
-        }
-
-        static void ProductUpdate()
+        public static void Run()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(BaseURL + "products");
+            doc.Load(Program.BaseURL + "products");
             string xmlcontents = doc.InnerXml;
 
             XmlElement xelRoot = doc.DocumentElement;
@@ -48,14 +32,7 @@ namespace DatabaseUpdater_V2
                 p.Weight = xndNode["Weight"].InnerText;
                 p.Price = decimal.Parse(xndNode["Price"].InnerText);
 
-                /*Products Existing = db.Products.FirstOrDefault(pe => p.EAN == xndNode["EAN"].InnerText);
-                    if (Existing != null)
-                    {
-                        
-                    }
-                */
-
-                var original = db.Products.Find(xndNode["EAN"].InnerText);
+                var original = db.Products.Find(p.EAN);
                 if (original != null)
                 {
                     db.Entry(original).CurrentValues.SetValues(p);
