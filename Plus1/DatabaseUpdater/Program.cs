@@ -22,7 +22,7 @@ namespace DatabaseUpdater
     class Program
     {
         public string BaseURL = "http://supermaco.starwave.nl/api/";
-        public string ConnectionString = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=C:\Users\Tom\Documents\GitHub\Plus1\Plus1\Plus1\App_Data\aspnet-Plus1-20180514115049.mdf;Initial Catalog=aspnet-Plus1-20180514115049;Integrated Security=True";
+        public string ConnectionString = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=C:\Users\koenw\Source\Repos\Plus1\Plus1\Plus1\App_Data\aspnet-Plus1-20180514115049.mdf;Initial Catalog=aspnet-Plus1-20180514115049;Integrated Security=True";
         static void Main(string[] args)
         {
             ShowOptions();
