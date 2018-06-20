@@ -44,8 +44,17 @@ namespace DatabaseUpdater_V3.Updaters
                         {
                             SubSubCategories ssc = new SubSubCategories();
                             ssc.Name = SubSubNode["Name"].InnerText;
-                            ssc.Parent_Name = SubNode["Name"].InnerText;
-                            db.SubSubCategories.Add(ssc);
+                            ssc.Parent_Name = sc.Name;
+                            var originalSubSub = db.SubSubCategories.Find(SubSubNode["Name"].InnerText);
+                            if (originalSubSub != null)
+                            {
+                                db.Entry(originalSubSub).CurrentValues.SetValues(c);
+                                db.SaveChanges();
+                            }
+                            else
+                            {
+                                db.SubSubCategories.Add(ssc);
+                            }
                         }
                     }
                     db.SaveChanges();
