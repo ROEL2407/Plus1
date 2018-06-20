@@ -31,7 +31,10 @@ namespace DatabaseUpdater_V3.Updaters
                 p.Image = xndNode["Image"].InnerText;
                 p.Weight = xndNode["Weight"].InnerText;
                 p.Price = decimal.Parse(xndNode["Price"].InnerText);
-
+                p.Category = xndNode["Category"].InnerText;
+                p.Subcategory = xndNode["Subcategory"].InnerText;
+                p.SubSubcategory = xndNode["Subsubcategory"].InnerText;
+                p.Image = xndNode["Image"].InnerText;
                 var original = db.Products.Find(p.EAN);
                 if (original != null)
                 {
