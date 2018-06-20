@@ -64,7 +64,7 @@
                                             <figure>
                                                 <div class="snipcart-item block">
                                                     <div class="snipcart-thumb">
-                                                        <a href=/Products/Details/@Html.DisplayFor(modelItem => item.ProductID) \"><img src="@Html.DisplayFor(modelItem => item.Image)" alt="" class="img-responsive" /></a>
+                                                        <a href=/Products/Details/@Html.DisplayFor(modelItem => item.EAN) \"><img src="@Html.DisplayFor(modelItem => item.Image)" alt="" class="img-responsive" /></a>
                                                         <p>  @Html.DisplayFor(modelItem => item.Title)</p>
                                                         <p>Merk: @Html.DisplayFor(modelItem => item.Brand)</p>
                                                         <h4>
@@ -77,10 +77,10 @@
                                                                 <input type="hidden" name="cmd" value="_cart" />
                                                                 <input type="hidden" name="add" value="1" />
                                                                 <input type="hidden" name="business" value=" " />
-                                                                <input type="hidden" name="item_name" value="Pepsi soft drink" />
-                                                                <input type="hidden" name="amount" value="40.00" />
-                                                                <input type="hidden" name="discount_amount" value="1.00" />
-                                                                <input type="hidden" name="currency_code" value="USD" />
+                                                                <input type="hidden" name="item_name" value="@Html.DisplayFor(modelItem => item.Title)" />
+                                                                <input type="hidden" name="amount" value="@Html.DisplayFor(modelItem => item.Price)" />
+                                                                <input type="hidden" name="discount_amount" value="" />
+                                                                <input type="hidden" name="currency_code" value="EUR" />
                                                                 <input type="hidden" name="return" value=" " />
                                                                 <input type="hidden" name="cancel_return" value=" " />
                                                                 <input type="submit" name="submit" value="Add to cart" class="button" />
