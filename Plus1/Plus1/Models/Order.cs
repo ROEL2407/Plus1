@@ -8,6 +8,11 @@ namespace Plus1.Models
     public class Order
     {
         public int OrderID { get; set; }
-        public Product ProductID { get; set; }
+        public string Firstname { get; set; } //TODO - moet automatisch worden ingevuld vanuit ASPNETUSERS DB
+        public string Surname { get; set; } //TODO - moet automatisch worden ingevuld vanuit ASPNETUSERS DB
+        public string Address { get; set; } //TODO - moet automatisch worden ingevuld vanuit ASPNETUSERS DB
+        public string Zipcode { get; set; } //TODO - moet automatisch worden ingevuld vanuit ASPNETUSERS DB
+        public string City { get; set; } //TODO - moet automatisch worden ingevuld vanuit ASPNETUSERS DB
+
     }
 }
