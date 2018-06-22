@@ -8,16 +8,19 @@ namespace Plus1.Controllers
 {
     public class CartController : Controller
     {
+        private Models.ApplicationDbContext db = new Models.ApplicationDbContext();
         // GET: Cart
         public ActionResult Index()
         {
-            return Json("Silece is golden", JsonRequestBehavior.AllowGet);
+            return View();
         }
         [HttpPost]
         [Authorize]
-        public ActionResult Add(int ProductID, int Quantity )
+        public ActionResult Add(string EAN, int Quantity)
         {
-            return Json("Succes", JsonRequestBehavior.AllowGet);
+            db.Products.Add(CartItem);
+            db.SaveChanges();
+            return RedirectToAction("Details");
         }
     }
 }

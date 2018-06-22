@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -12,23 +12,16 @@ namespace Plus1.Controllers
 {
     public class ProductsController : Controller
     {
-        ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Products
-        public ActionResult Index(string searchString) { 
-       
-            var products = from m in db.Products select m;
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                products = products.Where(s => s.Title.Contains(searchString) || s.Brand.Contains(searchString) || s.Shortdescription.Contains(searchString) || s.FullDescription.Contains(searchString));
-            }
-
-            return View(products);
+        public ActionResult Index()
+        {
+            return View(db.Products.ToList());
         }
 
         // GET: Products/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string id)
         {
             if (id == null)
             {
@@ -53,7 +46,7 @@ namespace Plus1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductID,EAN,Title,Brand,Shortdescription,FullDescription,Weight,Price")] Product product)
+        public ActionResult Create([Bind(Include = "EAN,Title,Brand,Shortdescription,FullDescription,Image,Weight,Price,Category,Subcategory,SubSubcategory")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +59,7 @@ namespace Plus1.Controllers
         }
 
         // GET: Products/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(string id)
         {
             if (id == null)
             {
@@ -85,7 +78,7 @@ namespace Plus1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductID,EAN,Title,Brand,Shortdescription,FullDescription,Weight,Price")] Product product)
+        public ActionResult Edit([Bind(Include = "EAN,Title,Brand,Shortdescription,FullDescription,Image,Weight,Price,Category,Subcategory,SubSubcategory")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +90,7 @@ namespace Plus1.Controllers
         }
 
         // GET: Products/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(string id)
         {
             if (id == null)
             {
@@ -114,7 +107,7 @@ namespace Plus1.Controllers
         // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
             Product product = db.Products.Find(id);
             db.Products.Remove(product);
