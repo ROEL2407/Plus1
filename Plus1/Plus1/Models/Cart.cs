@@ -8,7 +8,7 @@ namespace Plus1.Models
     public class Cart
     {
         public int CartID { get; set; }
-        //public int applicationuser
+        public ApplicationUser User { get; set; }
         public DateTime Expirationdate { get; set;}
 
     }

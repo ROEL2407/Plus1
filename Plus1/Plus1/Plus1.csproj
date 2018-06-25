@@ -219,6 +219,10 @@
     <Compile Include="Migrations\201806221126039_price.Designer.cs">
       <DependentUpon>201806221126039_price.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806221150573_cartuser.cs" />
+    <Compile Include="Migrations\201806221150573_cartuser.Designer.cs">
+      <DependentUpon>201806221150573_cartuser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -597,6 +601,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806221126039_price.resx">
       <DependentUpon>201806221126039_price.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806221150573_cartuser.resx">
+      <DependentUpon>201806221150573_cartuser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
