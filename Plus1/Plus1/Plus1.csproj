@@ -211,17 +211,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806221103560_dectodoub.cs" />
-    <Compile Include="Migrations\201806221103560_dectodoub.Designer.cs">
-      <DependentUpon>201806221103560_dectodoub.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806221126039_price.cs" />
-    <Compile Include="Migrations\201806221126039_price.Designer.cs">
-      <DependentUpon>201806221126039_price.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806221150573_cartuser.cs" />
-    <Compile Include="Migrations\201806221150573_cartuser.Designer.cs">
-      <DependentUpon>201806221150573_cartuser.cs</DependentUpon>
+    <Compile Include="Migrations\201806251723208_LateNight.cs" />
+    <Compile Include="Migrations\201806251723208_LateNight.Designer.cs">
+      <DependentUpon>201806251723208_LateNight.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -596,14 +588,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806221103560_dectodoub.resx">
-      <DependentUpon>201806221103560_dectodoub.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806221126039_price.resx">
-      <DependentUpon>201806221126039_price.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806221150573_cartuser.resx">
-      <DependentUpon>201806221150573_cartuser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806251723208_LateNight.resx">
+      <DependentUpon>201806251723208_LateNight.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
