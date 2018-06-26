@@ -211,14 +211,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806221103560_dectodoub.cs" />
-    <Compile Include="Migrations\201806221103560_dectodoub.Designer.cs">
-      <DependentUpon>201806221103560_dectodoub.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806221126039_price.cs" />
-    <Compile Include="Migrations\201806221126039_price.Designer.cs">
-      <DependentUpon>201806221126039_price.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -590,14 +582,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806221103560_dectodoub.resx">
-      <DependentUpon>201806221103560_dectodoub.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806221126039_price.resx">
-      <DependentUpon>201806221126039_price.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

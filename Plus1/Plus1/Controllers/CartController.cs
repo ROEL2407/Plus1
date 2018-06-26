@@ -16,11 +16,11 @@ namespace Plus1.Controllers
         }
         [HttpPost]
         [Authorize]
-        public ActionResult Add(string EAN, int Quantity)
+       /* public ActionResult Add(string EAN, int Quantity)
         {
             db.Products.Add(CartItem);
             db.SaveChanges();
             return RedirectToAction("Details");
-        }
+        }*/
     }
 }
