@@ -223,6 +223,14 @@
     <Compile Include="Migrations\201806221150573_cartuser.Designer.cs">
       <DependentUpon>201806221150573_cartuser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806250854148_CIKey.cs" />
+    <Compile Include="Migrations\201806250854148_CIKey.Designer.cs">
+      <DependentUpon>201806250854148_CIKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806250911225_EAN.cs" />
+    <Compile Include="Migrations\201806250911225_EAN.Designer.cs">
+      <DependentUpon>201806250911225_EAN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -604,6 +612,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806221150573_cartuser.resx">
       <DependentUpon>201806221150573_cartuser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806250854148_CIKey.resx">
+      <DependentUpon>201806250854148_CIKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806250911225_EAN.resx">
+      <DependentUpon>201806250911225_EAN.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
