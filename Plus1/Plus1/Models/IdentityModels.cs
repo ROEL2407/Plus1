@@ -47,6 +47,7 @@ namespace Plus1.Models
 
 
 
+        public System.Data.Entity.DbSet<Plus1.Models.CartItem> CartItems { get; set; }
         public System.Data.Entity.DbSet<Plus1.Models.Cart> Carts { get; set; }
 
        // public System.Data.Entity.DbSet<Plus1.Models.NewsArticle> NewsArticles { get; set; }
