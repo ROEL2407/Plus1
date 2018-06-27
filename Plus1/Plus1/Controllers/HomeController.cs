@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plus1.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,12 +9,17 @@ namespace Plus1.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+
+        private ApplicationDbContext db = new ApplicationDbContext();
+ 
         public ActionResult Index()
         {
 
-            //verdwenen door git...
-            return View();
+            var viewModel = new HomeViewModel();
+            viewModel.Products = db.Products.ToList();
+           // viewModel.Promotions = db.Promotions.ToList();
+            viewModel.Categories = db.Category.ToList();
+            return View(viewModel);
         }
     }
 }
