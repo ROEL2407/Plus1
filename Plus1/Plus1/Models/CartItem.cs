@@ -8,8 +8,8 @@ namespace Plus1.Models
 {
     public class CartItem
     {
-        // [Key]
-        public int CartItemID { get; set; } //Groeten Koen. Anders was er geen 'key'
+        [Key]
+        public int CartItemID { get; set; }
         public Cart CartID { get; set; }
         public string EAN { get; set; }
         public int Quantity { get; set; }

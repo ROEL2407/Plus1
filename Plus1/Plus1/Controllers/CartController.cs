@@ -17,37 +17,30 @@ namespace Plus1.Controllers
         {
             return View();
         }
-        /*
-    [HttpPost]
-    [Authorize]
-public ActionResult Add(string EAN, int Quantity)
-    {
-        Cart c = new Cart();
-        DateTime today = DateTime.Now;
-        c.Expirationdate = today.AddDays(7);
-        c.User.Id = User.Identity.GetUserId();
-        if (db.Carts.Find(c.User) != null)
+        [Authorize]
+        public ActionResult Add(string EAN, int Quantity)
         {
-            CartItem Ci = new CartItem();
-            Ci.CartID = c;
-            Ci.ProductID = int.Parse(EAN);
-            Ci.Quantity = Quantity;
-            db.CartItems.Add(Ci);
-        }
-        else
-        {
-            ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
             Cart c = new Cart();
             DateTime today = DateTime.Now;
             c.Expirationdate = today.AddDays(7);
             c.User.Id = User.Identity.GetUserId();
-            if (db.Carts.Find(c.User) != null)
+            var data = db.Carts.Find(c);
+            if (!data.Equals(data))
             {
                 CartItem Ci = new CartItem();
                 Ci.CartID = c;
-                Ci.EAN = EAN; 
+                Ci.EAN = EAN;
                 Ci.Quantity = Quantity;
-                db.CartItems.Add(Ci);
+                CartItem ex = db.CartItems.Find(Ci.CartID, Ci.EAN);
+                if (ex != null)
+                {
+                    Ci.Quantity = Ci.Quantity + ex.Quantity;
+                    db.Entry(ex).CurrentValues.SetValues(Ci);
+                }
+                else
+                {
+                    db.CartItems.Add(Ci);
+                }
             }
             else
             {
@@ -59,18 +52,27 @@ public ActionResult Add(string EAN, int Quantity)
                 db.CartItems.Add(Ci);
             }
             db.SaveChanges();
-            return Json(new { foo = "bar", baz = "Blech" });
-=======
-            db.Carts.Add(c);
-            CartItem Ci = new CartItem();
-            Ci.CartID = c;
-            Ci.ProductID = int.Parse(EAN);
-            Ci.Quantity = Quantity;
-            db.CartItems.Add(Ci);
->>>>>>> 27a0f223759b35e42ccf5c3546958b4448c2e107
+            return RedirectToAction("Details");
         }
-        db.SaveChanges();
-        return RedirectToAction("Details");
-    }*/
+        public ActionResult GetCartDefault()
+        {
+            string Response = 
+                "{" +
+                    "'Status': 'Fail'," +
+                    "'Message': 'Log in om producten toe te voegen en te bestellen!'," +
+                "}";
+            return Json(Response, JsonRequestBehavior.AllowGet);
+        }
+
+        [Authorize]
+        public ActionResult GetCart(ApplicationUser u)
+        {
+            string Response =
+            "{" +
+                "'Status': 'Success'," +
+                "'Message': 'Welkom terug, " + u.UserName + "'," +
+            "}";
+            return Json(Response, JsonRequestBehavior.AllowGet);
+        }
     }
 }
