@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
 
-namespace Plus1.Controllers
+namespace Plus1.Models
 {
-    public class HomeController : Controller
+
+    public class HomeViewModel
     {
-        // GET: Home
-        public ActionResult Index()
-        {
-            return View();
-        }
+        public ICollection<Product> Products { get; set; }
+        public ICollection<Promotion> Promotions { get; set; }
+        public ICollection<Category> Categories { get; set; }
     }
 }
+

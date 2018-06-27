@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Plus1.Models.Product>
+﻿@model IEnumerable<Plus1.Models.HomeViewModel>
 @{
     ViewBag.Title = "Home Page";
 }
@@ -18,7 +18,7 @@
                 <div id="myTabContent" class="tab-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="expeditions" aria-labelledby="expeditions-tab">
                         <div class="agile-tp">
-                          </div>
+                        </div>
                         <div class="agile_top_brands_grids">
 
 
@@ -27,84 +27,77 @@
 
 
 
-                                    @if (true)
+                                @if (true)
+                                {
+
+
+                                    int nmb = 0;
+
+                                    foreach (var item in Model)
                                     {
 
 
-                                        int nmb = 0;
 
-                                        foreach (var item in Model)
+
+
+
+
+                                        foreach (var product in item.Products)
                                         {
+                                            @Html.DisplayFor(productItem => product.Title);
 
-                                            if (nmb == 0)
-                                            {
-          
+                                        }
+                                        <div class="col-md-4 top_brand_left">
+                                            <div class="hover14 column">
+                                                <div class="agile_top_brand_left_grid">
 
-                                                                @:<div class="agile_top_brands_grids">
+                                                    <div class="agile_top_brand_left_grid1">
+                                                        <figure>
+                                                            <div class="snipcart-item block">
+                                                                <div class="snipcart-thumb">
+                                                                    @*
+                                                                        <a href=/Products/Details/@Html.DisplayFor(modelItem => item.EAN) \"><img src="@Html.DisplayFor(modelItem => item.Image)" alt="" class="img-responsive" /></a>
+                                                                        <p>  @Html.DisplayFor(modelItem => item.Title)</p>
+                                                                        <p>Merk: @Html.DisplayFor(modelItem => item.Brand)</p>
+                                                                        <h4>
+                                                                            @Html.DisplayFor(modelItem => item.Price) <span>$99.00</span>
+                                                                        </h4>
+                                                                    *@
+                                                                </div>
 
-
-                                            }
-
-
-
-
-
-
-
-
-                            <div class="col-md-4 top_brand_left">
-                                <div class="hover14 column">
-                                    <div class="agile_top_brand_left_grid">
-                                       
-                                        <div class="agile_top_brand_left_grid1">
-                                            <figure>
-                                                <div class="snipcart-item block">
-                                                    <div class="snipcart-thumb">
-                                                        <a href=/Products/Details/@Html.DisplayFor(modelItem => item.EAN) \"><img src="@Html.DisplayFor(modelItem => item.Image)" alt="" class="img-responsive" /></a>
-                                                        <p>  @Html.DisplayFor(modelItem => item.Title)</p>
-                                                        <p>Merk: @Html.DisplayFor(modelItem => item.Brand)</p>
-                                                        <h4>
-                                                            @Html.DisplayFor(modelItem => item.Price) <span>$99.00</span>
-                                                        </h4>
+                                                            </div>
+                                                        </figure>
                                                     </div>
-                    
                                                 </div>
-                                            </figure>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
 
-        if (nmb == 2)
-        {
-            nmb = -1;
-                              @:<div class="clearfix"></div></div>
 
-        }
-        nmb = nmb + 1;
 
-    }
 
-}
+
+                                    }
+
+                                }
                             </table>
 
 
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="tours" aria-labelledby="tours-tab">
-                        <div class="agile-tp">
-                            <h5>This week</h5>
-                            <p class="w3l-ad">We've pulled together all our advertised offers into one place, so you won't miss out on a great deal.</p>
                         </div>
-                        <div class="agile_top_brands_grids">
+                        <div role="tabpanel" class="tab-pane fade" id="tours" aria-labelledby="tours-tab">
+                            <div class="agile-tp">
+                                <h5>This week</h5>
+                                <p class="w3l-ad">We've pulled together all our advertised offers into one place, so you won't miss out on a great deal.</p>
+                            </div>
+                            <div class="agile_top_brands_grids">
 
 
-                            <!-- products-->
-                            <div class="clearfix"> </div>
+                                <!-- products-->
+                                <div class="clearfix"> </div>
+                            </div>
+
                         </div>
-                       
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
