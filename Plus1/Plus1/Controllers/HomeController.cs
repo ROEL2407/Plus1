@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
-namespace Plus1.Models
+namespace Plus1.Controllers
 {
-
-    public class HomeViewModel
+    public class HomeController : Controller
     {
-        public ICollection<Product> Products { get; set; }
-        public ICollection<Promotion> Promotions { get; set; }
-        public ICollection<Category> Categories { get; set; }
+        // GET: Home
+        public ActionResult Index()
+        {
+
+            //verdwenen door git...
+            return View();
+        }
     }
 }
-
