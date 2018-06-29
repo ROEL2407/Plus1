@@ -205,18 +205,41 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\CategoryViewController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsArticles1Controller.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\SubCategoryController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806270926261_CartUSerid.cs" />
+    <Compile Include="Migrations\201806270926261_CartUSerid.Designer.cs">
+      <DependentUpon>201806270926261_CartUSerid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806271146029_Cartidtrope.cs" />
+    <Compile Include="Migrations\201806271146029_Cartidtrope.Designer.cs">
+      <DependentUpon>201806271146029_Cartidtrope.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806291107302_dsfs.cs" />
+    <Compile Include="Migrations\201806291107302_dsfs.Designer.cs">
+      <DependentUpon>201806291107302_dsfs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806291142012_catsfi.cs" />
+    <Compile Include="Migrations\201806291142012_catsfi.Designer.cs">
+      <DependentUpon>201806291142012_catsfi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806291144547_catsfid.cs" />
+    <Compile Include="Migrations\201806291144547_catsfid.Designer.cs">
+      <DependentUpon>201806291144547_catsfid.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CategoryViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\SubCategory.cs" />
     <Compile Include="Models\DeliverySlot.cs" />
@@ -406,6 +429,8 @@
     <Content Include="Areas\Admin\Views\AdminNewsArticles\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNewsArticles\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminRegister\AdminRegister.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -568,11 +593,13 @@
     <Content Include="Views\NewsArticles1\Index.cshtml" />
     <Content Include="Views\Categories\Details.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Cart\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Views\Cart\" />
+    <Folder Include="Views\CategoryView\" />
+    <Folder Include="Views\SubCategory\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -586,6 +613,23 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806270926261_CartUSerid.resx">
+      <DependentUpon>201806270926261_CartUSerid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806271146029_Cartidtrope.resx">
+      <DependentUpon>201806271146029_Cartidtrope.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806291107302_dsfs.resx">
+      <DependentUpon>201806291107302_dsfs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806291142012_catsfi.resx">
+      <DependentUpon>201806291142012_catsfi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806291144547_catsfid.resx">
+      <DependentUpon>201806291144547_catsfid.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

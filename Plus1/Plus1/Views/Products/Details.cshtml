@@ -23,16 +23,11 @@
                         <h4 class="m-sing">@Html.DisplayFor(model => model.Price) <span>$99.00</span></h4>
                     </div>
                     <div class="snipcart-details agileinfo_single_right_details">
-                        <form action=""id="AddC" method="post">
+                        <form action="/Cart/Add" id="AddC" method="get">
                             <fieldset>
-                                <input type="hidden" name="cmd" value="_cart">
                                 <input type="hidden" name="Quantity" value="1">
                                 <input type="hidden" name="EAN" value="@Html.DisplayFor(model => model.EAN)">
-                                <input type="hidden" name="item_name" value="@Html.DisplayFor(model => model.Title)">
                                 <input type="hidden" name="price" value="@Html.DisplayFor(model => model.Price)">
-                                <input type="hidden" name="currency_code" value="EUR">
-                                <input type="hidden" name="return" value=" ">
-                                <input type="hidden" name="cancel_return" value=" ">
                                 <input type="submit" name="submit" value="Voeg toe" class="button">
                             </fieldset>
                         </form>
@@ -40,6 +35,7 @@
                 </div>
             </div>
             <script>
+                /*
                 $(function () {
 
                     $('form').submit(function () {
@@ -56,6 +52,7 @@
                         return false;
                     });
                 });
+                */
             </script>
             <div class="clearfix"> </div>
         </div>

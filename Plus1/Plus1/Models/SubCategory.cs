@@ -10,7 +10,8 @@ namespace Plus1.Models
     {
         [Key]
         public string Name { get; set; }
- 
-        public Category Parent { get; set; }
+
+        public string ParentName { get; set; }
+        public virtual Category Parent { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace Plus1.Controllers
             return View(db.Category.ToList());
         }
 
-        // GET: Categories/Details/5
+        /*// GET: Categories/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -33,6 +33,44 @@ namespace Plus1.Controllers
                 return HttpNotFound();
             }
             return View(category);
+        }*/
+        public ActionResult Details(string id)
+        {
+            Category category = db.Category.Find(id);
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (category == null)
+            {
+                return HttpNotFound();
+            }
+            var viewModel = new CategoryViewModel();
+                List<Category> Cats = new List<Category>();
+                Cats.Add(category);
+            viewModel.Products = db.Products.Take(100).ToList();
+            viewModel.Category = Cats;
+            viewModel.SubCategory = db.SubCategory.Where(c => c.ParentName == category.Name).Take(20).ToList();
+            return View(viewModel);
+        }
+        public ActionResult SubDetails(string id)
+        {
+            Category category = db.Category.Find(id);
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (category == null)
+            {
+                return HttpNotFound();
+            }
+            var viewModel = new CategoryViewModel();
+            List<Category> Cats = new List<Category>();
+            Cats.Add(category);
+            viewModel.Products = db.Products.Take(100).ToList();
+            viewModel.Category = Cats;
+            viewModel.SubCategory = db.SubCategory.Where(c => c.ParentName == category.Name).Take(20).ToList();
+            return View(viewModel);
         }
 
         // GET: Categories/Create
