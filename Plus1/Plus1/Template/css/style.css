@@ -3390,10 +3390,18 @@ td.invert-image a img {
 .w3agile_description h4 {
     font-size: 0.875em;
 }
-.w3agile_description {
+.w3agile_description {  
     margin: 1em 0;
 }
 .w3agile_description p {
     font-size: 13px;
 }
 }
+.col-md-4.top_brand_left .hover14.column {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 0px solid #000;
+}
+    .col-md-4.top_brand_left .hover14.column:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
