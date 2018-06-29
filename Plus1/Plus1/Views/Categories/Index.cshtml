@@ -4,24 +4,31 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Name }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Name }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Name })
-        </td>
-    </tr>
-}
 
-</table>
+
+
+
+
+
+
+<div class="brands">
+    <div class="container">
+        <h3>Categorieën</h3>
+
+
+        <div class="brands-agile">
+            @foreach (var item in Model)
+            {
+        <div class="col-md-4 w3layouts-brand">
+            <div class="brands-w3l">
+                <p>@Html.ActionLink(item.Name, "Details", new { id = item.Name }, htmlAttributes: new { id = "koko" })</p>
+            </div>
+        </div>
+            }
+        <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+    
