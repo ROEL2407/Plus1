@@ -18,6 +18,9 @@ p{
 #koko {
     margin-bottom: 10px;
 }
+.backgrnd_cat {
+    background-color: #9FBF67 !important;
+}
 h1,h2,h3,h4,h5,h6,a{
 	font-family: 'Raleway', sans-serif;
 	margin:0;
