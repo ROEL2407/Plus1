@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Plus1.Models.Product>
+﻿homepageindex
+@model IEnumerable<Plus1.Models.Product>
 @{
     ViewBag.Title = "Home Page";
 }
@@ -15,11 +16,23 @@
                     <li role="presentation" class="active"><a href="#expeditions" id="expeditions-tab" role="tab" data-toggle="tab" aria-controls="expeditions" aria-expanded="true">Producten</a></li>
                     <li role="presentation"><a href="#tours" role="tab" id="tours-tab" data-toggle="tab" aria-controls="tours">Aanbiedingen van vandaag</a></li>
                 </ul>
+
                 <div id="myTabContent" class="tab-content">
+                    <div class="w3l_search" style="width:90%">
+                        <form action="/" method="post">
+                            <input type="search" name="SearchString" id="SearchString" action="/home/" placeholder="Zoek Producten..." style="float:left">
+                            <button type="submit" class="btn btn-default search" aria-label="Left Align" style="float:left">
+                                <i class="fa fa-search" aria-hidden="true"> </i>
+                            </button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                    <div class="clearfix"></div>
                     <div role="tabpanel" class="tab-pane fade in active" id="expeditions" aria-labelledby="expeditions-tab">
                         <div class="agile-tp">
                         </div>
                         <div class="agile_top_brands_grids">
+
 
 
 
@@ -33,25 +46,11 @@
 
                                     int nmb = 0;
 
+
                                     foreach (var item in Model)
                                     {
 
-
-
-
-
-
-
-<<<<<<< HEAD
-                                        @*foreach (var product in item.Products)
-                                        {
-                                            @Html.DisplayFor(productItem => product.Title);
-
-                                        }*@
-=======
-                                     
->>>>>>> 47131beeb83f444c75fae96c130a7e661cc1efca
-                                        <div class="col-md-4 top_brand_left">
+                                        <div class="col-md-4 top_brand_left" style="margin-bottom:30px">
                                             <div class="hover14 column">
                                                 <div class="agile_top_brand_left_grid">
 
@@ -59,14 +58,14 @@
                                                         <figure>
                                                             <div class="snipcart-item block">
                                                                 <div class="snipcart-thumb">
-                                                                 
-                                                                        <a href=/Products/Details/@Html.DisplayFor(modelItem => item.EAN) \"><img src="@Html.DisplayFor(modelItem => item.Image)" alt="" class="img-responsive" /></a>
-                                                                        <p>  @Html.DisplayFor(modelItem => item.Title)</p>
-                                                                        <p>Merk: @Html.DisplayFor(modelItem => item.Brand)</p>
-                                                                        <h4>
-                                                                            @Html.DisplayFor(modelItem => item.Price) <span>$99.00</span>
-                                                                        </h4>
-                                                             
+
+                                                                    @*   <a href=/Products/Details/@Html.DisplayFor(modelItem => \"><img src="@Html.DisplayFor(modelItem => item.Image)" alt="" class="img-responsive" /></a>*@
+                                                                    <p>  @Html.DisplayFor(modelItem => item.Title)</p>
+                                                                    <p>Merk: @Html.DisplayFor(modelItem => item.Brand)</p>
+                                                                    <h4>
+                                                                        @Html.DisplayFor(modelItem => item.Price) <span>$99.00</span>
+                                                                    </h4>
+
                                                                 </div>
 
                                                             </div>
