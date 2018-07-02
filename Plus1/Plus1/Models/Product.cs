@@ -21,6 +21,8 @@ namespace Plus1.Models
         public string Category { get; set; }
         public string Subcategory { get; set; }
         public string SubSubcategory { get; set; }
+
+        public bool Promotion { get; set; }
   
 
     }

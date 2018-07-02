@@ -1,33 +1,21 @@
-﻿@model IEnumerable<Plus1.Areas.Admin.Models.PromotionProducts>
+﻿@model IEnumerable<Plus1.Models.Product>
 
 @{
     ViewBag.Title = "Index";
 }
+<div id="page-wrapper">
+    <h1>Aanbiedingsproducten</h1>
+    <h4>Deze producten worden op de homepagina weergegeven</h4>
+    <form action="/Admin/PromotionProducts/Edit" id="products">
+        <select name="edit" form="products">
 
-<h2>Index</h2>
+            @foreach (var item in Model)
+            {
+                <option value="@Html.DisplayFor(modelItem => item.EAN)">@Html.DisplayFor(modelItem => item.Title)</option>
+            }
+            <input type="submit">
+    </form>
+    </select>
+</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Visible)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Visible)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PromotionProductsID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PromotionProductsID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PromotionProductsID })
-        </td>
-    </tr>
-}
-
-</table>
+@*  TODO - MOOI MAKEN*@

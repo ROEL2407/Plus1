@@ -11,19 +11,15 @@ namespace Plus1.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Products
-        public ActionResult Index(string searchString)
+
+        public ActionResult Index()
         {
             var products = from m in db.Products select m;
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                products = products.Where(s => s.Title.Contains(searchString) || s.Brand.Contains(searchString));
-            }
+            //TODO - CHECKEN OF Promotion TRUE IS
+            //products = products.Where(s => s.Promotion.);
 
             return View(products);
         }
-
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
