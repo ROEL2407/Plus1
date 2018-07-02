@@ -36,11 +36,6 @@ namespace Plus1.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
-<<<<<<< HEAD
-=======
-
-
->>>>>>> abaeb3f8825369383aba7505aad2ab79c960365c
         }
     }
 }

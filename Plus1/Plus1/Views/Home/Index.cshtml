@@ -48,18 +48,13 @@
 
 
                                     foreach (var item in Model)
-                                    {
-
-<<<<<<< HEAD
-                                        @*foreach (var product in item.Products)
+                                    { 
+                                        @*@foreach (var product in item.Products)
                                         {
                                             @Html.DisplayFor(productItem => product.Title);
 
                                         }*@
-                                        <div class="col-md-4 top_brand_left">
-=======
                                         <div class="col-md-4 top_brand_left" style="margin-bottom:30px">
->>>>>>> abaeb3f8825369383aba7505aad2ab79c960365c
                                             <div class="hover14 column">
                                                 <div class="agile_top_brand_left_grid">
 
@@ -68,7 +63,7 @@
                                                             <div class="snipcart-item block">
                                                                 <div class="snipcart-thumb">
 
-                                                                    @*   <a href=/Products/Details/@Html.DisplayFor(modelItem => \"><img src="@Html.DisplayFor(modelItem => item.Image)" alt="" class="img-responsive" /></a>*@
+                                                                    @*@<a href=/Products/Details/@Html.DisplayFor(modelItem => \"><img src="@Html.DisplayFor(modelItem => item.Image)" alt="" class="img-responsive" /></a>*@
                                                                     <p>  @Html.DisplayFor(modelItem => item.Title)</p>
                                                                     <p>Merk: @Html.DisplayFor(modelItem => item.Brand)</p>
                                                                     <h4>
@@ -84,23 +79,11 @@
                                             </div>
                                         </div>
 
+                                            }
 
-
-
-
-                                    }
 
                                 }
                             </table>
-
-
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade" id="tours" aria-labelledby="tours-tab">
-                            <div class="agile-tp">
-                                <h5>This week</h5>
-                                <p class="w3l-ad">We've pulled together all our advertised offers into one place, so you won't miss out on a great deal.</p>
-                            </div>
-                            <div class="agile_top_brands_grids">
 
 
                                 <!-- products-->
@@ -108,8 +91,3 @@
                             </div>
 
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
