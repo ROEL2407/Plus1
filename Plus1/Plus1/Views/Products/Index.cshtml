@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Plus1.Models.Product>
+﻿homepageindex
+@model IEnumerable<Plus1.Models.Product>
 @{
     ViewBag.Title = "Home Page";
 }
@@ -15,11 +16,23 @@
                     <li role="presentation" class="active"><a href="#expeditions" id="expeditions-tab" role="tab" data-toggle="tab" aria-controls="expeditions" aria-expanded="true">Producten</a></li>
                     <li role="presentation"><a href="#tours" role="tab" id="tours-tab" data-toggle="tab" aria-controls="tours">Aanbiedingen van vandaag</a></li>
                 </ul>
+
                 <div id="myTabContent" class="tab-content">
+                    <div class="w3l_search" style="width:90%">
+                        <form action="/" method="post">
+                            <input type="search" name="SearchString" id="SearchString" action="/home/" placeholder="Zoek Producten..." style="float:left">
+                            <button type="submit" class="btn btn-default search" aria-label="Left Align" style="float:left">
+                                <i class="fa fa-search" aria-hidden="true"> </i>
+                            </button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                    <div class="clearfix"></div>
                     <div role="tabpanel" class="tab-pane fade in active" id="expeditions" aria-labelledby="expeditions-tab">
                         <div class="agile-tp">
                         </div>
                         <div class="agile_top_brands_grids">
+
 
 
 
@@ -33,17 +46,11 @@
 
                                     int nmb = 0;
 
+
                                     foreach (var item in Model)
                                     {
 
-
-
-
-
-
-
-
-                                        <div class="col-md-4 top_brand_left">
+                                        <div class="col-md-4 top_brand_left" style="margin-bottom:30px">
                                             <div class="hover14 column">
                                                 <div class="agile_top_brand_left_grid">
 

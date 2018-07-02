@@ -1,10 +1,9 @@
-﻿using System.Data.Entity;
+﻿using Plus1.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Plus1.Models;
 
 namespace Plus1.Controllers
 {
@@ -15,7 +14,6 @@ namespace Plus1.Controllers
         // GET: Products
         public ActionResult Index(string searchString)
         {
-
             var products = from m in db.Products select m;
 
             if (!String.IsNullOrEmpty(searchString))
@@ -38,6 +36,11 @@ namespace Plus1.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> abaeb3f8825369383aba7505aad2ab79c960365c
         }
     }
 }
