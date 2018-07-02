@@ -19,75 +19,35 @@ namespace Plus1.Controllers
         // GET: Cart/Add
         public ActionResult Add(string EAN, int Quantity)
         {
-            if (Session["cart"] == null)
-            {
-                List<Product> li = new List<Product>();
-                Product p = db.Products.Find(EAN);
-                li.Add(p);
-                Session["cart"] = li;
-                ViewBag.cart = li.Count();
-                Session["count"] = 1;
-            }
-            else
-            {
-                List<Product> li = (List<Product>)Session["cart"];
-                Product p = db.Products.Find(EAN);
-                li.Add(p);
-                Session["cart"] = li;
-                ViewBag.cart = li.Count();
-                Session["count"] = Convert.ToInt32(Session["count"]) + 1;
-            }
-            return RedirectToAction("Index", "Cart");
-        }
-        /*{
-            Cart c = new Cart();
-            DateTime today = DateTime.Now;
-            c.Expirationdate = today.AddDays(7);
             var userId = User.Identity.GetUserId();
-            c.UserId = userId;
-            Guid guid = Guid.NewGuid();
-            Random random = new Random();
-            int i = random.Next();
-            c.CartID = i;
-            var data = db.Carts.Where(a => a.UserId == c.UserId);
-            if (!data.Equals(null))
+            //Cart data = db.Carts.Find(userId);
+            var finddata = db.Carts.Where(a => a.UserId == userId);
+            foreach (Cart data in finddata)
             {
-                CartItem Ci = new CartItem();
-                Ci.CartID = c.CartID;
-                Ci.EAN = EAN;
-                Ci.Quantity = Quantity;
-                CartItem ex = null; 
-                try
+                if (!data.Equals(null))
                 {
-                    ex = db.CartItems.Where(a => a.EAN == Ci.EAN && a.CartID == Ci.CartID).FirstOrDefault();
-                }
-                catch
-                {
+                    CartItem Ci = new CartItem();
+                    Ci.EAN = EAN;
+                    Ci.Quantity = Quantity;
+                    CartItem ex = db.CartItems.Where(a => a.EAN == Ci.EAN && a.CartID == Ci.CartID).FirstOrDefault();
 
+                    if (ex != null)
+                    {
+                        Ci.Quantity = Ci.Quantity + ex.Quantity;
+
+                        db.Entry(ex).CurrentValues.SetValues(Ci);
+                    }
+                    else
+                    {
+                        Ci.CartID = data.CartID;
+                        db.CartItems.Add(Ci);
+                    }
                 }
-                if (ex != null)
-                {
-                    Ci.Quantity = Ci.Quantity + ex.Quantity;
-                    db.Entry(ex).CurrentValues.SetValues(Ci);
-                }
-                else
-                {
-                    db.CartItems.Add(Ci);
-                }
-            }
-            else
-            {
-                c.CartID = i;
-                db.Carts.Add(c);
-                CartItem Ci = new CartItem();
-                Ci.CartID = c.CartID;
-                Ci.EAN = EAN;
-                Ci.Quantity = Quantity;
-                db.CartItems.Add(Ci);
             }
             db.SaveChanges();
             return RedirectToAction("Details");
-        }*/
+        }
+
         public ActionResult GetCartDefault()
         {
             string Response = 

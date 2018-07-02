@@ -27,7 +27,6 @@ namespace Plus1.Controllers
         }
 
         public ActionResult About()
-<<<<<<< HEAD
         {
             ViewBag.Message = "Your application description page.";
 
@@ -39,21 +38,6 @@ namespace Plus1.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
-=======
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-
-
->>>>>>> 47131beeb83f444c75fae96c130a7e661cc1efca
         }
     }
 }

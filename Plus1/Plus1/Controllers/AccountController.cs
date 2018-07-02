@@ -15,6 +15,7 @@ namespace Plus1.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        private Models.ApplicationDbContext db = new Models.ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -79,6 +80,18 @@ namespace Plus1.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    //Create Cart for User
+
+                        Cart c = new Cart();
+                        DateTime today = DateTime.Now;
+                        c.Expirationdate = today.AddDays(7);
+                        var user = await UserManager.FindByNameAsync(model.Email);
+                        var userId = user.Id;
+                        c.UserId = userId;
+                        db.Carts.Add(c);
+                        db.SaveChanges();
+
+                    //End Cart Code
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
