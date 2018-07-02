@@ -1,0 +1,48 @@
+﻿@model Plus1.Models.CategoryViewModel
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <div class="brands">
+        <div class="container">
+            @foreach (var item in Model.SubSubCategory)
+            {
+                <h3>@item.Name</h3>
+            }
+
+                <div class="brands-agile">
+                    @foreach (var item in Model.Products)
+                    {
+                    <div class="col-md-4 top_brand_left">
+                        <div class="hover14 column">
+                            <div class="agile_top_brand_left_grid">
+
+                                <div class="agile_top_brand_left_grid1">
+                                    <figure>
+                                        <div class="snipcart-item block">
+                                            <div class="snipcart-thumb">
+                                                <a href="/Products/Details/@Html.DisplayFor(modelItem => item.EAN)\"><img src="@Html.DisplayFor(modelItem => item.Image)" alt="" class="img-responsive" /></a>
+                                                <p>  @Html.DisplayFor(modelItem => item.Title)</p>
+                                                <p>Merk: @Html.DisplayFor(modelItem => item.Brand)</p>
+                                                <h4>
+                                                    @Html.DisplayFor(modelItem => item.Price) <span>$99.00</span>
+                                                </h4>
+
+                                            </div>
+
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    }
+                    <div class="clearfix"></div>
+                </div>
+        </div>
+    </div>
+</div>

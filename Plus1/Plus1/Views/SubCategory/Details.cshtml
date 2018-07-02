@@ -1,0 +1,32 @@
+﻿@model Plus1.Models.CategoryViewModel
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <div class="brands">
+        <div class="container">
+            @foreach (var item in Model.SubCategory)
+            {
+            <h3>Sub Sub Categorieën: @item.Name</h3>
+            }
+
+            <div class="brands-agile">
+                @foreach (var item in Model.SubSubCategory)
+                {
+                <div class="col-md-4 w3layouts-brand">
+                    <div class="brands-w3l">
+
+                        <p>
+                            @Html.ActionLink(item.Name, "Details", "SubSubCategory", new { id = item.Name }, null)
+                        </p>
+                    </div>
+                </div>
+                }
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
