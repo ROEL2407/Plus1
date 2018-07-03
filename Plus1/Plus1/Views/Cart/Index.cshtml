@@ -1,0 +1,33 @@
+﻿@model Plus1.Models.CartViewModel
+
+@{
+    ViewBag.Title = "Mijn Winkelwagen";
+}
+
+<div>
+    <div class="brands">
+        <div class="container">
+
+            <h3>Mijn Winkelwagen</h3>
+
+            <div class="brands-agile">
+
+                @foreach (var item in Model.Items)
+                {
+                    <div class="snipcart-thumb">
+
+                        <img src="@Html.DisplayFor(modelItem => item.Image)" alt="" class="img-responsive" />
+                        <p>  @Html.DisplayFor(modelItem => item.Title)</p>
+                        <p>Merk: @Html.DisplayFor(modelItem => item.Title)</p>
+                        <h4>
+                            @Html.DisplayFor(modelItem => item.Price) <span>$99.00</span>
+                        </h4>
+
+                    </div>
+                }
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>

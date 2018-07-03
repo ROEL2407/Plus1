@@ -32,7 +32,7 @@ namespace Plus1.Controllers
             
             return View(product);
         }
-
+        
 
 
         // GET: Products/Details/5
@@ -47,6 +47,7 @@ namespace Plus1.Controllers
             {
                 return HttpNotFound();
             }
+            product.Price = product.Price / 100;
             return View(product);
         }
 

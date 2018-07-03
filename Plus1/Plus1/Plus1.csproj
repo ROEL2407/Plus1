@@ -216,18 +216,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807021446439_product.cs" />
-    <Compile Include="Migrations\201807021446439_product.Designer.cs">
-      <DependentUpon>201807021446439_product.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807021605229_backendfix.cs" />
-    <Compile Include="Migrations\201807021605229_backendfix.Designer.cs">
-      <DependentUpon>201807021605229_backendfix.cs</DependentUpon>
+    <Compile Include="Migrations\201807030847490_Producmd.cs" />
+    <Compile Include="Migrations\201807030847490_Producmd.Designer.cs">
+      <DependentUpon>201807030847490_Producmd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\CartItemViewModel.cs" />
+    <Compile Include="Models\CartViewModel.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CategoryViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
@@ -502,7 +500,7 @@
     <Content Include="Views\NewsArticles1\Index.cshtml" />
     <Content Include="Views\Categories\Details.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
-    <Content Include="Views\Cart\index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
     <None Include="Views\SubCategory\Details.cshtml" />
     <Content Include="Views\SubSubCategory\Details.cshtml" />
   </ItemGroup>
@@ -526,11 +524,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807021446439_product.resx">
-      <DependentUpon>201807021446439_product.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807021605229_backendfix.resx">
-      <DependentUpon>201807021605229_backendfix.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807030847490_Producmd.resx">
+      <DependentUpon>201807030847490_Producmd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

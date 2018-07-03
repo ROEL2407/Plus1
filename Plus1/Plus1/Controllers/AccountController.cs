@@ -88,8 +88,13 @@ namespace Plus1.Controllers
                         var user = await UserManager.FindByNameAsync(model.Email);
                         var userId = user.Id;
                         c.UserId = userId;
+
+                    Cart ex = db.Carts.Where(Exc => Exc.UserId == userId).DefaultIfEmpty(null).First();
+                    if (ex == null)
+                    {
                         db.Carts.Add(c);
                         db.SaveChanges();
+                    }
 
                     //End Cart Code
                     return RedirectToLocal(returnUrl);
