@@ -11,5 +11,6 @@ namespace Plus1.Models
         public ICollection<Product> Products { get; set; }
         public ICollection<Promotion> Promotions { get; set; }
         public ICollection<Category> Categories { get; set; }
+        public ICollection<NewsArticle> NewsArticle { get; set; }
     }
 }
