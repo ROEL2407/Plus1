@@ -220,6 +220,10 @@
     <Compile Include="Migrations\201807021446439_product.Designer.cs">
       <DependentUpon>201807021446439_product.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807021605229_backendfix.cs" />
+    <Compile Include="Migrations\201807021605229_backendfix.Designer.cs">
+      <DependentUpon>201807021605229_backendfix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -524,6 +528,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807021446439_product.resx">
       <DependentUpon>201807021446439_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807021605229_backendfix.resx">
+      <DependentUpon>201807021605229_backendfix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
