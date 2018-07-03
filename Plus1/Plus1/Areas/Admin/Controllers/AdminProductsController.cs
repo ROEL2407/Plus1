@@ -10,19 +10,26 @@ using Plus1.Models;
 
 namespace Plus1.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin, Webredacteur")]
+    // [Authorize(Roles = "Admin")]
     public class AdminProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Admin/AdminProducts
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.Products.ToList());
+            var product = from m in db.Products select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                product = product.Where(s => s.Title.Contains(searchString) || s.Brand.Contains(searchString));
+            }
+
+            return View(product);
         }
 
         // GET: Admin/AdminProducts/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string id)
         {
             if (id == null)
             {
@@ -47,7 +54,7 @@ namespace Plus1.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductID,EAN,Title,Brand,Shortdescription,FullDescription,Image,Weight,Price")] Product product)
+        public ActionResult Create([Bind(Include = "EAN,Title,Brand,Shortdescription,FullDescription,Image,Weight,Price,Category,Subcategory,SubSubcategory,Promotion")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -60,7 +67,7 @@ namespace Plus1.Areas.Admin.Controllers
         }
 
         // GET: Admin/AdminProducts/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(string id)
         {
             if (id == null)
             {
@@ -79,7 +86,7 @@ namespace Plus1.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductID,EAN,Title,Brand,Shortdescription,FullDescription,Image,Weight,Price")] Product product)
+        public ActionResult Edit([Bind(Include = "EAN,Title,Brand,Shortdescription,FullDescription,Image,Weight,Price,Category,Subcategory,SubSubcategory,Promotion")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +98,7 @@ namespace Plus1.Areas.Admin.Controllers
         }
 
         // GET: Admin/AdminProducts/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(string id)
         {
             if (id == null)
             {
@@ -108,7 +115,7 @@ namespace Plus1.Areas.Admin.Controllers
         // POST: Admin/AdminProducts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
             Product product = db.Products.Find(id);
             db.Products.Remove(product);

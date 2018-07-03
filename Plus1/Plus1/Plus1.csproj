@@ -202,7 +202,6 @@
     <Compile Include="Areas\Admin\Controllers\AdminProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminRegisterController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomePageController.cs" />
-    <Compile Include="Areas\Admin\Controllers\PromotionProductsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
@@ -216,9 +215,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Migrations\201807030847490_Producmd.cs" />
     <Compile Include="Migrations\201807030847490_Producmd.Designer.cs">
       <DependentUpon>201807030847490_Producmd.cs</DependentUpon>
+=======
+    <Compile Include="Migrations\201807030936410_homeview.cs" />
+    <Compile Include="Migrations\201807030936410_homeview.Designer.cs">
+      <DependentUpon>201807030936410_homeview.cs</DependentUpon>
+>>>>>>> 912bfd4c3777a2caa4b0103e1d7a36e15502a76e
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -406,20 +411,17 @@
     <Content Include="Areas\Admin\Template\vendor\font-awesome\scss\_stacked.scss" />
     <Content Include="Areas\Admin\Template\vendor\font-awesome\scss\_variables.scss" />
     <Content Include="Areas\Admin\Views\HomePage\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminProducts\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminProducts\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminProducts\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminProducts\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminProducts\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNewsArticles\Create.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNewsArticles\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNewsArticles\Details.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNewsArticles\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNewsArticles\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminRegister\AdminRegister.cshtml" />
-    <Content Include="Areas\Admin\Views\PromotionProducts\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\PromotionProducts\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\PromotionProducts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProducts\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProducts\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProducts\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProducts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProducts\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
@@ -524,8 +526,13 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\201807030847490_Producmd.resx">
       <DependentUpon>201807030847490_Producmd.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Migrations\201807030936410_homeview.resx">
+      <DependentUpon>201807030936410_homeview.cs</DependentUpon>
+>>>>>>> 912bfd4c3777a2caa4b0103e1d7a36e15502a76e
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

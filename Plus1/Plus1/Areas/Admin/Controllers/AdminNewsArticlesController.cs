@@ -10,8 +10,10 @@ using Plus1.Models;
 
 namespace Plus1.Areas.Admin.Controllers
 {
+    //[Authorize(Roles = "Admin, Webredacteur")]
     public class AdminNewsArticlesController : Controller
     {
+
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Admin/AdminNewsArticles

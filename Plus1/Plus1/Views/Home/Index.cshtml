@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Plus1.Models.Product>
+﻿@model Plus1.Models.HomeViewModel
 
 @{
     ViewBag.Title = "Home Page";
@@ -23,7 +23,7 @@
 
                             <table class="table">
 
-                                @foreach (var item in Model)
+                                @foreach (var item in Model.Products)
                                 {
                                     <div class="col-md-4 top_brand_left" style="margin-bottom:30px">
                                         <div class="hover14 column">
@@ -34,7 +34,7 @@
                                                         <div class="snipcart-item block">
                                                             <div class="snipcart-thumb">
 
-                                                                <a href=/Products/Details/@Html.DisplayFor(modelItem => item.EAN) \><img src="@Html.DisplayFor(modelItem => item.Image)" alt="" class="img-responsive" /></a>
+                                                                   <a href=/Products/Details/@Html.DisplayFor(modelItem => item.EAN) \><img src="@Html.DisplayFor(modelItem => item.Image)" alt="" class="img-responsive" /></a>
                                                                 <p>  @Html.DisplayFor(modelItem => item.Title)</p>
                                                                 <p>Merk: @Html.DisplayFor(modelItem => item.Title)</p>
                                                                 <h4>
@@ -64,3 +64,59 @@
         </div>
     </div>
 </div>
+<div class="top-brands">
+    <div class="container">
+        <h2>Uitgelichte Nieuwsartikelen</h2>
+        <div class="grid_3 grid_5">
+            <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+               
+
+                <div id="myTabContent" class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="expeditions" aria-labelledby="expeditions-tab">
+                        <div class="agile-tp">
+                        </div>
+                        <div class="agile_top_brands_grids">
+
+                            <table class="table">
+
+                                @foreach (var item in Model.NewsArticle)
+                                {
+                                    <div class="col-md-4 top_brand_left" style="margin-bottom:30px">
+                                        <div class="hover14 column">
+                                            <div class="agile_top_brand_left_grid">
+
+                                                <div class="agile_top_brand_left_grid1">
+                                                    <figure>
+                                                        <div class="snipcart-item block">
+                                                            <a href="/NewsArticles1/Details/@Html.DisplayFor(modelItem => item.NewsArticleID)\">
+                                                                <div class="snipcart-thumb">
+
+
+                                                                    <p>  @Html.DisplayFor(modelItem => item.Title)</p>
+                                                                    <p>Merk: @Html.DisplayFor(modelItem => item.Content)</p>
+
+
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                }
+
+                            </table>
+
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
