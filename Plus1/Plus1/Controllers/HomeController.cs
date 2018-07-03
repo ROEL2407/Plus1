@@ -16,7 +16,7 @@ namespace Plus1.Controllers
         {
             var products = from m in db.Products select m;
             //TODO - CHECKEN OF Promotion TRUE IS
-            //products = products.Where(s => s.Promotion.);
+            products = products.Where(s => s.Promotion == true );
 
             return View(products);
         }

@@ -216,14 +216,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807021446439_product.cs" />
-    <Compile Include="Migrations\201807021446439_product.Designer.cs">
-      <DependentUpon>201807021446439_product.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807021605229_backendfix.cs" />
-    <Compile Include="Migrations\201807021605229_backendfix.Designer.cs">
-      <DependentUpon>201807021605229_backendfix.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -408,11 +400,6 @@
     <Content Include="Areas\Admin\Template\vendor\font-awesome\scss\_stacked.scss" />
     <Content Include="Areas\Admin\Template\vendor\font-awesome\scss\_variables.scss" />
     <Content Include="Areas\Admin\Views\HomePage\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminProducts\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminProducts\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminProducts\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminProducts\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminProducts\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNewsArticles\Create.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNewsArticles\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNewsArticles\Details.cshtml" />
@@ -422,6 +409,11 @@
     <Content Include="Areas\Admin\Views\PromotionProducts\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\PromotionProducts\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\PromotionProducts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProducts\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProducts\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProducts\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProducts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProducts\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
@@ -524,14 +516,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807021446439_product.resx">
-      <DependentUpon>201807021446439_product.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807021605229_backendfix.resx">
-      <DependentUpon>201807021605229_backendfix.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
