@@ -10,14 +10,22 @@ using Plus1.Models;
 
 namespace Plus1.Areas.Admin.Controllers
 {
+    // [Authorize(Roles = "Admin")]
     public class AdminProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Admin/AdminProducts
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.Products.ToList());
+            var product = from m in db.Products select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                product = product.Where(s => s.Title.Contains(searchString) || s.Brand.Contains(searchString));
+            }
+
+            return View(product);
         }
 
         // GET: Admin/AdminProducts/Details/5
