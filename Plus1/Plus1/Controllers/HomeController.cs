@@ -25,6 +25,7 @@ namespace Plus1.Controllers
     
             viewModel.Products = db.Products.Where(s => s.Promotion == true).ToList();
             viewModel.NewsArticle = db.NewsArticles.Take(20).ToList();
+            viewModel.Categories = db.Category.Take(3).ToList();
             return View(viewModel);
 
         }
