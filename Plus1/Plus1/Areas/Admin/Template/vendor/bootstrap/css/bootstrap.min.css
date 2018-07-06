@@ -21,5 +21,6 @@
 /*# sourceMappingURL=bootstrap.min.css.map */
 
 #admintextarea {
+    min-width: 365px !important;
     width: 100%;
 }

@@ -12,7 +12,7 @@ using System.Web.Mvc;
 namespace Plus1.Areas.Admin.Controllers
 {
 
-   // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminRegisterController : Controller
     {
         // GET: Admin/AdminRegister
