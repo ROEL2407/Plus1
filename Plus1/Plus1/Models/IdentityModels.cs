@@ -43,8 +43,7 @@ namespace Plus1.Models
         public DbSet<SubCategory> SubCategory { get; set; }
         public DbSet<SubSubCategory> SubSubCategory { get; set; }
         public DbSet<NewsArticle> NewsArticles { get; set; }
-
-
+        public DbSet<Promotion> Promotions { get; set; }
 
 
         public System.Data.Entity.DbSet<Plus1.Models.CartItem> CartItems { get; set; }

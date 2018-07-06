@@ -126,6 +126,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Promotions.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubCategories.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -135,6 +138,7 @@
     </Compile>
     <Compile Include="Updaters\CategoryUpdater.cs" />
     <Compile Include="Updaters\ProductUpdater.cs" />
+    <Compile Include="Updaters\PromotionUpdater.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -142,7 +146,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Database V3_TemporaryKey.pfx" />
     <None Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </None>

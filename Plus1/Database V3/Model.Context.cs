@@ -37,5 +37,6 @@ namespace Database_V3
         public virtual DbSet<Products> Products { get; set; }
         public virtual DbSet<SubCategories> SubCategories { get; set; }
         public virtual DbSet<SubSubCategories> SubSubCategories { get; set; }
+        public virtual DbSet<Promotions> Promotions { get; set; }
     }
 }
