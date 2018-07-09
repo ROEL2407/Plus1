@@ -1,0 +1,20 @@
+﻿@model Plus1.Models.CartViewModel
+
+@{
+    ViewBag.Title = "Mijn Winkelwagen";
+}
+<!-- checkout -->
+<div class="checkout">
+    <div class="container">
+        <h2>Uw gegevens</h2>
+        <form method="get" action="Order/Delivery">
+            Voornaam: <input type="text" name="Firstname" placeholder="Voornaam" /><br />
+            Achternaam: <input type="text" name="Surname" placeholder="Achternaam" /><br />
+            Adres: <input type="text" name="Adress" placeholder="Adres" /><br />
+            Postcode: <input type="text" name="Zipcode" placeholder="Postcode" /><br />
+            Plaats: <input type="text" name="City" placeholder="Plaats" /><br />
+            <input type="submit" value="Naar bezorgmoment" class="button checkout-right-basket"/><br />
+        </form>
+    </div>
+</div>
+<!-- //checkout -->

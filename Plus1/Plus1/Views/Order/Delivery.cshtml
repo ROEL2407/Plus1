@@ -1,0 +1,53 @@
+﻿@model Plus1.Models.CartViewModel
+
+@{
+    ViewBag.Title = "Bezorgmoment selecteren";
+}
+<!-- checkout -->
+<div class="checkout">
+    <div class="container">
+        <h2>Selecteer een bezorgmoment:</h2>
+        <form method="get" action="Order/Delivery">
+            Voornaam: <input type="text" name="Firstname" placeholder="Voornaam" /><br />
+            Achternaam: <input type="text" name="Surname" placeholder="Achternaam" /><br />
+            Adres: <input type="text" name="Adress" placeholder="Adres" /><br />
+            Postcode: <input type="text" name="Zipcode" placeholder="Postcode" /><br />
+            Plaats: <input type="text" name="City" placeholder="Plaats" /><br />
+            <input type="submit" value="Naar bezorgmoment" class="button checkout-right-basket" /><br />
+        </form>
+    </div>
+</div>
+<!-- //checkout -->
+
+<div class="register">
+    <div class="container">
+        <h2>Register Here</h2>
+        <div class="login-form-grids">
+            <h5>profile information</h5>
+            <form action="#" method="post">
+                <input type="text" placeholder="First Name..." required=" ">
+                <input type="text" placeholder="Last Name..." required=" ">
+            </form>
+            <div class="register-check-box">
+                <div class="check">
+                    <label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>Subscribe to Newsletter</label>
+                </div>
+            </div>
+            <h6>Login information</h6>
+            <form action="#" method="post">
+                <input type="email" placeholder="Email Address" required=" ">
+                <input type="password" placeholder="Password" required=" ">
+                <input type="password" placeholder="Password Confirmation" required=" ">
+                <div class="register-check-box">
+                    <div class="check">
+                        <label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>I accept the terms and conditions</label>
+                    </div>
+                </div>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+        <div class="register-home">
+            <a href="index.html">Home</a>
+        </div>
+    </div>
+</div>
