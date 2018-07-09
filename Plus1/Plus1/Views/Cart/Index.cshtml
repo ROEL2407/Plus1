@@ -6,27 +6,31 @@
 <!-- checkout -->
 <div class="checkout">
     <div class="container">
-        <h2>Your shopping cart contains: <span>3 Products</span></h2>
+        <h2>Uw Winkelwagen:</h2>
         <div class="checkout-right">
             <table class="timetable_sub">
                 <thead>
                     <tr>
-                        <th>SL No.</th>
+                        <th></th>
                         <th>Product</th>
-                        <th>Quality</th>
-                        <th>Product Name</th>
+                        <th>Aantal</th>
+                        <th>Naam</th>
 
-                        <th>Price</th>
-                        <th>Remove</th>
+                        <th>Prijs</th>
                     </tr>
                 </thead>
               
                 @foreach (var item in Model.Items)
-    {
-         
+                {
+
 
                     <tr class="rem1">
-                        <td class="invert">1</td>
+                        <td class="RemoveC">
+                            <form id="RemoveC" action="http://localhost:52447/Cart/Remove" method="get">
+                                <input name="EAN" value="@Html.DisplayFor(modelItem => item.EAN)" type="hidden" />
+                                <input type="submit" value="X" />
+                            </form>
+                        </td>
                         <td class="invert-image" style="width: 35%"><a href="single.html"><img src="@Html.DisplayFor(modelItem => item.Image)" alt=" " class="img-responsive" /></a></td>
                         <td class="invert">
                             <div class="quantity">
@@ -39,25 +43,11 @@
                         </td>
                         <td class="invert">@Html.DisplayFor(modelItem => item.Title)</td>
 
-                        <td class="invert"> @Html.DisplayFor(modelItem => item.Price)</td>
-                        <td class="invert">
-                            <div class="rem">
-                                <div class="close1"> </div>
-                            </div>
-                            <script>
-                                $(document).ready(function (c) {
-                                    $('.close1').on('click', function (c) {
-                                        $('.rem1').fadeOut('slow', function (c) {
-                                            $('.rem1').remove();
-                                        });
-                                    });
-                                });
-                            </script>
-                        </td>
+                        <td class="invert">€ @Html.DisplayFor(modelItem => item.Price)</td>
                     </tr>
 
-               
-}
+
+                }
 
                 <!--quantity-->
                 <script>
@@ -101,17 +91,23 @@ user_tag_config['ebound_header_tag']['mobile']['adsCode'] = '';
         </div>
         <div class="checkout-left">
             <div class="checkout-left-basket">
-                <h4>Continue to basket</h4>
+                <h4>Totaal</h4>
                 <ul>
-                    <li>Product1 <i>-</i> <span>$15.00 </span></li>
-                    <li>Product2 <i>-</i> <span>$25.00 </span></li>
-                    <li>Product3 <i>-</i> <span>$29.00 </span></li>
-                    <li>Total Service Charges <i>-</i> <span>$15.00</span></li>
-                    <li>Total <i>-</i> <span>$84.00</span></li>
+                    @{decimal total = 0; }
+                    @foreach (var item in Model.Items)
+            {
+                total = total + item.Price;
+                <li>@item.Title<i>:</i> <span>€@item.Price </span></li>
+    }
+                    <li>Total <i>:</i> <span>€@total</span></li>
                 </ul>
             </div>
             <div class="checkout-right-basket">
-                <a href="single.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue Shopping</a>
+                <a href="http://localhost:52447/Products"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Verder Winkelen</a>
+            </div>
+
+            <div class="checkout-right-basket">
+                <a href="http://localhost:52447/Order">Naar Afrekenen</a>
             </div>
             <div class="clearfix"> </div>
         </div>

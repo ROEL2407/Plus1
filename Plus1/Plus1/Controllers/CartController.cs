@@ -23,7 +23,7 @@ namespace Plus1.Controllers
                     CartItem Ci = new CartItem();
                     Ci.EAN = EAN;
                     Ci.CartID = UC.CartID;
-                    var OldQuantity = Ci.Quantity;
+                    int OldQuantity = Ci.Quantity;
                     CartItem ex = db.CartItems.Where(a => a.EAN == Ci.EAN && a.CartID == Ci.CartID).DefaultIfEmpty(null).First();
 
                     if (ex != null)
@@ -42,16 +42,47 @@ namespace Plus1.Controllers
             return RedirectToAction("Details");
         }
 
+        public ActionResult Remove(string EAN)
+        {
+            var userId = User.Identity.GetUserId();
+            //Cart data = db.Carts.Find(userId);
+            var finddata = db.Carts.Where(a => a.UserId == userId).DefaultIfEmpty(null).First();
+            if (finddata != null)
+            {
+                Cart UC = finddata;
+                CartItem Ci = new CartItem();
+                Ci.EAN = EAN;
+                Ci.CartID = UC.CartID;
+                var OldQuantity = Ci.Quantity;
+                CartItem ex = db.CartItems.Where(a => a.EAN == Ci.EAN && a.CartID == Ci.CartID).DefaultIfEmpty(null).First();
+
+                if (ex != null)
+                {
+                    db.CartItems.Remove(ex);
+                    db.SaveChanges();
+                }
+                else
+                {
+                }
+            }
+            return RedirectToAction("Index");
+        }
+
         [Authorize]
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
-            Cart UserCart = db.Carts.Where(Cart => Cart.UserId == userId).First();
+            Cart UserCart = db.Carts.Where(Cart => Cart.UserId == userId).DefaultIfEmpty(null).FirstOrDefault();
 
             CartViewModel CVM = new CartViewModel();
             List<CartItemViewModel> CVIM = new List<CartItemViewModel>();
-
-            foreach (CartItem c in db.CartItems.Where(Ci => Ci.CartID == UserCart.CartID))
+            if (UserCart == null)
+            {
+                return View("Empty");
+            }
+            else
+            {
+                foreach (CartItem c in db.CartItems.Where(Ci => Ci.CartID == UserCart.CartID))
                 {
                     Product p = db.Products.Find(c.EAN);
                     CartItemViewModel CartModel = new CartItemViewModel();
@@ -59,12 +90,13 @@ namespace Plus1.Controllers
                     CartModel.Quantity = c.Quantity;
                     CartModel.Title = p.Title;
                     CartModel.Image = p.Image;
-                    CartModel.Price = p.Price;
+                    CartModel.Price = p.Price / 100;
                     CVIM.Add(CartModel);
                 }
 
-            CVM.Items = CVIM;
-            return View(CVM);
+                CVM.Items = CVIM;
+                return View(CVM);
+            }
         }
     }
 }

@@ -209,6 +209,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsArticles1Controller.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\SubCategoryController.cs" />
     <Compile Include="Controllers\SubSubCategoryController.cs" />
@@ -497,6 +498,9 @@
     <Content Include="Views\Categories\Details.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\Empty.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\Delivery.cshtml" />
     <None Include="Views\SubCategory\Details.cshtml" />
     <Content Include="Views\SubSubCategory\Details.cshtml" />
   </ItemGroup>

@@ -39,17 +39,17 @@
                         <thead>
                             <tr>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Title)
+                                    Productnaam
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Brand)
+                                    Merk
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Price)
+                                    Prijs
                                 </th>
 
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Promotion)
+                                    Tonen op Homepagina?
                                 </th>
                                 <th></th>
                             </tr>
@@ -58,6 +58,7 @@
 
                             @foreach (var item in Model)
                             {
+                                item.Price = item.Price / 100;
                                 <tr>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Title)

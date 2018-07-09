@@ -29,7 +29,10 @@ namespace Plus1.Controllers
             {
                 product = product.Where(s => s.Title.Contains(searchString) || s.Brand.Contains(searchString));
             }
-            
+            foreach(Product p in product)
+            {
+                p.Price = p.Price / 100;
+            }
             return View(product);
         }
         
