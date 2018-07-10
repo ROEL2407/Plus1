@@ -216,10 +216,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807031158126_Promotionsmodel.cs" />
-    <Compile Include="Migrations\201807031158126_Promotionsmodel.Designer.cs">
-      <DependentUpon>201807031158126_Promotionsmodel.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -329,15 +325,10 @@
     <Content Include="Areas\Admin\Template\vendor\font-awesome\css\font-awesome.min.css" />
     <Content Include="Areas\Admin\Template\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Areas\Admin\Template\vendor\font-awesome\HELP-US-OUT.txt" />
-    <Content Include="Areas\Admin\Template\vendor\jquery\jquery.js" />
-    <Content Include="Areas\Admin\Template\vendor\jquery\jquery.min.js" />
     <Content Include="Areas\Admin\Template\vendor\metisMenu\metisMenu.css" />
     <Content Include="Areas\Admin\Template\vendor\metisMenu\metisMenu.js" />
     <Content Include="Areas\Admin\Template\vendor\metisMenu\metisMenu.min.css" />
     <Content Include="Areas\Admin\Template\vendor\metisMenu\metisMenu.min.js" />
-    <Content Include="Areas\Admin\Template\vendor\morrisjs\morris.css" />
-    <Content Include="Areas\Admin\Template\vendor\morrisjs\morris.js" />
-    <Content Include="Areas\Admin\Template\vendor\morrisjs\morris.min.js" />
     <Content Include="Areas\Admin\Template\vendor\raphael\raphael.js" />
     <Content Include="Areas\Admin\Template\vendor\raphael\raphael.min.js" />
     <Content Include="Content\bootstrap.css" />
@@ -522,11 +513,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807031158126_Promotionsmodel.resx">
-      <DependentUpon>201807031158126_Promotionsmodel.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

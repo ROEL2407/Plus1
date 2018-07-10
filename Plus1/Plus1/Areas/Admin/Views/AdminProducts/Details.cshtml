@@ -4,6 +4,7 @@
     ViewBag.Title = "Details";
 }
 <div id="page-wrapper">
+    <br />
     <h2>Details</h2>
 
     <div>
@@ -67,7 +68,7 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.Category)
+                Categorie
             </dt>
 
             <dd>
@@ -75,7 +76,7 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.Subcategory)
+                SubCategorie
             </dt>
 
             <dd>
@@ -83,7 +84,7 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.SubSubcategory)
+                SubSubCategorie
             </dt>
 
             <dd>
@@ -104,4 +105,4 @@
         @Html.ActionLink("Aanpassen", "Edit", new { id = Model.EAN }) |
         @Html.ActionLink("Terug naar Productoverzicht", "Index")
     </p>
-    </div>
+</div>

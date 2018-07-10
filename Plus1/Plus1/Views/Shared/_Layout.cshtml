@@ -105,7 +105,7 @@
                         <li>@Html.ActionLink("Over ons", "About", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         <li>@Html.ActionLink("Nieuws", "Index", "NewsArticles1")</li>
-                        @if (User.IsInRole("Admin, Webredacteur"))
+                        @if (User.IsInRole("Admin") || User.IsInRole("Webredacteur"))
     {
                     <li>@Html.ActionLink("Admin", "HomePage", "Admin")</li>
 }

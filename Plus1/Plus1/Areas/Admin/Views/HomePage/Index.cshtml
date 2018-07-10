@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "index";
 }
-    @if (User.IsInRole("Admin"))
+    @if (User.IsInRole("Admin") || User.IsInRole("Webredacteur"))
     {
 
 <div id="page-wrapper">
