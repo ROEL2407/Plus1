@@ -246,7 +246,6 @@
     <Content Include="Areas\Admin\Template\dist\css\sb-admin-2.min.css" />
     <Content Include="Areas\Admin\Template\dist\js\sb-admin-2.js" />
     <Content Include="Areas\Admin\Template\dist\js\sb-admin-2.min.js" />
-    <Content Include="Areas\Admin\Template\js\sb-admin-2.js" />
     <Content Include="Areas\Admin\Template\vendor\bootstrap-social\bootstrap-social.css" />
     <Content Include="Areas\Admin\Template\vendor\bootstrap\css\bootstrap.css" />
     <Content Include="Areas\Admin\Template\vendor\bootstrap\css\bootstrap.min.css" />
@@ -498,6 +497,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Template\js\" />
     <Folder Include="Template\images\" />
     <Folder Include="Views\CategoryView\" />
   </ItemGroup>
