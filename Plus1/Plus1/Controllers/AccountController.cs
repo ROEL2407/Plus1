@@ -185,6 +185,23 @@ namespace Plus1.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
                     // await this.UserManager.AddToRoleAsync(user.Id, model.UserRole);
+
+                    //Create Cart for User
+
+                    Cart c = new Cart();
+                    DateTime today = DateTime.Now;
+                    c.Expirationdate = today.AddDays(7);
+                    var userId = user.Id;
+                    c.UserId = userId;
+
+                    Cart ex = db.Carts.Where(Exc => Exc.UserId == userId).DefaultIfEmpty(null).First();
+                    if (ex == null)
+                    {
+                        db.Carts.Add(c);
+                        db.SaveChanges();
+                    }
+
+                    //End Cart Code
                     await UserManager.AddToRoleAsync(user.Id, "Bezoeker");
                     return RedirectToAction("Index", "Home");
                 }

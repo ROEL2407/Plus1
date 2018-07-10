@@ -10,7 +10,7 @@
         <div class="container">
             @foreach (var item in Model.Category)
             {
-                <h3>Sub Categorieën: @item.Name</h3>
+                <h3>@item.Name</h3>
             }
 
                 <div class="brands-agile">
@@ -27,6 +27,8 @@
 }
                     <br />
                     <br />
+                    <div class="clearfix"></div>
+                    <div class="clearfix"></div>
                     <h3>Producten in deze categorie</h3>
                     <br />
                     @foreach (var item in Model.Products)
