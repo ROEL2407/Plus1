@@ -9,7 +9,7 @@ namespace Database_V3.Updaters
 {
     class PromotionUpdater
     {
-        public static void Run()
+        /*public static void Run()
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(Program.BaseURL + "promotions");
@@ -40,6 +40,6 @@ namespace Database_V3.Updaters
 
             }
             Console.WriteLine("Finished Product Table Routine");
-        }
+        }*/
     }
 }

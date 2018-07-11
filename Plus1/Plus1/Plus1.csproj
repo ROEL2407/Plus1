@@ -509,6 +509,7 @@
     <Content Include="Views\Cart\Empty.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\Delivery.cshtml" />
+    <Content Include="Views\Order\Payment.cshtml" />
     <None Include="Views\SubCategory\Details.cshtml" />
     <Content Include="Views\SubSubCategory\Details.cshtml" />
   </ItemGroup>

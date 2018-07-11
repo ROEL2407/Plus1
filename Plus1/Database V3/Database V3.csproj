@@ -49,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>1A0154F8E9F93FD24454A822E607AAAB1A6A801D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>0E4DCE90E7C65BB92C022B17DF4CBB1E3779BAEC</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Database V3_TemporaryKey.pfx</ManifestKeyFile>
@@ -146,6 +146,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Database V3_TemporaryKey.pfx" />
     <None Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </None>
