@@ -3,29 +3,18 @@
 @{
     ViewBag.Title = "Bezorgmoment selecteren";
 }
-<!-- checkout -->
-<div class="checkout">
+
+<div class="register">
     <div class="container">
-        <h2>Selecteer een bezorgmoment:</h2>
-        <div class="container-fluid">
-            <div class="row">
-                <form method="get" action="/Order/Payment">
-                    <div class="col-md-4" style="min-height: 10%; background-color: whitesmoke;  text-align: center;">
-                        <input type="radio" name="Del" value="1"><br />
-                        2018-07-17 8:00 - 22:00<br>
-                    </div>
-                    <div class="col-md-4" style="min-height: 10%; background-color: whitesmoke;  text-align: center;">
-                        <input type="radio" name="Del" value="1"><br />
-                        2018-07-17 8:00 - 22:00<br>
-                    </div>
-                    <div class="col-md-4" style="min-height: 10%;background-color: whitesmoke; text-align: center;">
-                        <input type="radio" name="Del" value="1"><br />
-                        2018-07-17 8:00 - 22:00<br>
-                    </div>
-                    <input type="submit" value="Naar Afrekenen" class="button checkout-right-basket" /><br />
-                </form>
-            </div>
+        <div class="login-form-grids">
+            <h5>Selecteer een bezorgmoment:</h5>
+            <form action="/Order/Payment" method="post">
+                <input type="radio" name="DeliveryMoment" value="1" /> 2018-07-17 8:00 - 22:00<br>
+                <input type="radio" name="DeliveryMoment" value="2" /> 2018-07-17 8:00 - 22:00<br>
+                <input type="radio" name="DeliveryMoment" value="3" /> 2018-07-17 8:00 - 22:00<br>
+                <input type="submit" value="Naar Afrekenen">
+            </form>
         </div>
+
     </div>
 </div>
-<!-- //checkout -->

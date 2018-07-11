@@ -3,18 +3,19 @@
 @{
     ViewBag.Title = "Mijn Winkelwagen";
 }
-<!-- checkout -->
-<div class="checkout">
+<div class="register">
     <div class="container">
-        <h2>Uw gegevens</h2>
-        <form method="get" action="Order/Delivery">
-            Voornaam: <input type="text" name="Firstname" placeholder="Voornaam" /><br />
-            Achternaam: <input type="text" name="Surname" placeholder="Achternaam" /><br />
-            Adres: <input type="text" name="Adress" placeholder="Adres" /><br />
-            Postcode: <input type="text" name="Zipcode" placeholder="Postcode" /><br />
-            Plaats: <input type="text" name="City" placeholder="Plaats" /><br />
-            <input type="submit" value="Naar bezorgmoment" class="button checkout-right-basket"/><br />
-        </form>
+        <div class="login-form-grids">
+            <h5>Uw Gegevens</h5>
+            <form action="Order/Delivery" method="post">
+                <input type="text" name="Firstname" placeholder="Voornaam">
+                <input type="text" name="Surname" placeholder="Achternaam">
+                <input type="text" name="Adress" placeholder="Adres">
+                <input type="text" name="Zipcode" placeholder="Postcode">
+                <input type="text" name="City" placeholder="Plaats">
+                <input type="submit" value="Naar bezorgmoment">
+            </form>
+        </div>
+       
     </div>
 </div>
-<!-- //checkout -->
