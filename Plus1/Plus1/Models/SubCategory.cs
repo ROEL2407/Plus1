@@ -13,5 +13,6 @@ namespace Plus1.Models
 
         public string ParentName { get; set; }
         public virtual Category Parent { get; set; }
+        public string Image { get; set; }
     }
 }

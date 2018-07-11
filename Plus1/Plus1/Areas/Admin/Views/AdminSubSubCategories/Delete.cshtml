@@ -3,38 +3,41 @@
 @{
     ViewBag.Title = "Delete";
 }
+<div id="page-wrapper">
+    <br />
+    <h2>Delete</h2>
 
-<h2>Delete</h2>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>SubSubCategory</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Parent.ParentName)
+            </dt>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>SubSubCategory</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Parent.ParentName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Parent.ParentName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Parent.ParentName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Image)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
+        </dl>
 
-    </dl>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
-</div>
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+    </div>

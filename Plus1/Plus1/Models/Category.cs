@@ -10,5 +10,6 @@ namespace Plus1.Models
     {
         [Key]
         public string Name { get; set; }
+        public string Image { get; set; }
     }
 }
