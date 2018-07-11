@@ -18,7 +18,7 @@
                 {
                 <div class="col-md-4 w3layouts-brand">
                     <div class="brands-w3l">
-
+                        <img src="@Html.DisplayFor(modelItem => item.Image)" alt="" class="img-responsive" />
                         <p>
                             @Html.ActionLink(item.Name, "Details", "SubSubCategory", new { id = item.Name }, null)
                         </p>

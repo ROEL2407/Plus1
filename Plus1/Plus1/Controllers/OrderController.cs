@@ -18,5 +18,10 @@ namespace Plus1.Controllers
         {
             return View();
         }
+
+        public ActionResult Payment()
+        {
+            return View();
+        }
     }
 }

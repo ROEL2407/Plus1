@@ -3,32 +3,34 @@
 @{
     ViewBag.Title = "Details";
 }
+<div id="page-wrapper">
+    <br />
+    <h2>Details</h2>
 
-<h2>Details</h2>
+    <div>
+        <h4>SubSubCategory</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Parent.ParentName)
+            </dt>
 
-<div>
-    <h4>SubSubCategory</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Parent.ParentName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Parent.ParentName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Parent.ParentName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Image)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Name }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Name }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    </div>
