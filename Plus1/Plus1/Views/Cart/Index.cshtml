@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "Mijn Winkelwagen";
 }
-<!-- checkout -->
 <div class="checkout">
     <div class="container">
         <h2>Uw Winkelwagen:</h2>
@@ -26,7 +25,7 @@
 
                     <tr class="rem1">
                         <td class="RemoveC">
-                            <form id="RemoveC" action="http://localhost:52447/Cart/Remove" method="get">
+                            <form id="RemoveC" action="/Cart/Remove" method="get">
                                 <input name="EAN" value="@Html.DisplayFor(modelItem => item.EAN)" type="hidden" />
                                 <input type="submit" value="X" />
                             </form>
@@ -103,15 +102,13 @@ user_tag_config['ebound_header_tag']['mobile']['adsCode'] = '';
                 </ul>
             </div>
             <div class="checkout-right-basket">
-                <a href="http://localhost:52447/Products"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Verder Winkelen</a>
+                <a href="/Products"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Verder Winkelen</a>
             </div>
 
             <div class="checkout-right-basket">
-                <a href="http://localhost:52447/Order">Naar Afrekenen</a>
+                <a href="/Order">Naar Afrekenen</a>
             </div>
             <div class="clearfix"> </div>
         </div>
     </div>
 </div>
-<!-- //checkout -->
-
