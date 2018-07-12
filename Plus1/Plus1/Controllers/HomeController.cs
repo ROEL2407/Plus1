@@ -22,8 +22,14 @@ namespace Plus1.Controllers
            // return View(products);
 
             var viewModel = new HomeViewModel();
-    
-            viewModel.Products = db.Products.Where(s => s.Promotion == true).ToList();
+
+            viewModel.Products = new List<Product>();
+            foreach (Product p in db.Products.Where(s => s.Promotion == true))
+            {
+                p.Price = p.Price / 100;
+                viewModel.Products.Add(p);
+
+            }
             viewModel.NewsArticle = db.NewsArticles.Take(20).ToList();
             viewModel.Categories = db.Category.Take(3).ToList();
             return View(viewModel);
