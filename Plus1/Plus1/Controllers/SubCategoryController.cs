@@ -33,7 +33,17 @@ namespace Plus1.Controllers
             List<SubCategory> Cats = new List<SubCategory>();
             Cats.Add(Subcategory);
             viewModel.SubCategory = Cats;
-            viewModel.Products = db.Products.Take(100).ToList();
+
+            viewModel.Products = new List<Product>();
+            foreach (Product p in db.Products.Take(100))
+            {
+                p.Price = p.Price / 100;
+                viewModel.Products.Add(p);
+
+            }
+
+
+          //  viewModel.Products = db.Products.Take(100).ToList();
             viewModel.SubSubCategory = db.SubSubCategory.Where(c => c.ParentName == Subcategory.Name).Take(20).ToList();
             return View(viewModel);
         }

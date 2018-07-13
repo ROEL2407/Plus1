@@ -48,7 +48,16 @@ namespace Plus1.Controllers
             var viewModel = new CategoryViewModel();
                 List<Category> Cats = new List<Category>();
                 Cats.Add(category);
-            viewModel.Products = db.Products.Where(c => c.Category == category.Name).ToList();
+
+         viewModel.Products = new List<Product>();
+           foreach (Product p in db.Products.Where(c => c.Category == category.Name))
+            {
+              p.Price = p.Price / 100;
+            viewModel.Products.Add(p);
+
+          }
+
+          //viewModel.Products = db.Products.Where(c => c.Category == category.Name).ToList();
             viewModel.Category = Cats;
             viewModel.SubCategory = db.SubCategory.Where(c => c.ParentName == category.Name).Take(20).ToList();
             return View(viewModel);
@@ -67,6 +76,7 @@ namespace Plus1.Controllers
             var viewModel = new CategoryViewModel();
             List<Category> Cats = new List<Category>();
             Cats.Add(category);
+
             viewModel.Products = db.Products.Take(100).ToList();
             viewModel.Category = Cats;
             viewModel.SubCategory = db.SubCategory.Where(c => c.ParentName == category.Name).Take(20).ToList();

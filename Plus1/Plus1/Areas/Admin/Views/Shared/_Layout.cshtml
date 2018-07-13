@@ -51,24 +51,28 @@
                         <li>
                             <a href="/Admin/HomePage"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
-                        <li>
-                            <a href="/Admin/adminproducts"><i class="fa fa-tag fa-fw"></i> Producten</a>
-                        </li>
+
                         <li>
                             <a href="/Admin/AdminNewsArticles/Index"><i class="fa fa-edit fa-fw"></i> Nieuwsartikelen</a>
                         </li>
-                        <li>
-                            <a href="/Admin/AdminCategories/Index"><i class="fa fa-edit fa-fw"></i> Categorieen</a>
-                        </li>
-                        <li>
-                            <a href="/Admin/AdminSubCategories/Index"><i class="fa fa-edit fa-fw"></i> SubCategorieen</a>
-                        </li>
-                        <li>
-                            <a href="/Admin/AdminSubSubCategories/Index"><i class="fa fa-edit fa-fw"></i> SubSubCategorieen</a>
-                        </li>
-                        <li>
-                            <a href="/Admin/AdminRegister/AdminRegister"><i class="fa fa-edit fa-fw"></i> Admin Registratie</a>
-                        </li>
+                        @if (User.IsInRole("Admin"))
+    {
+                    <li>
+                        <a href="/Admin/adminproducts"><i class="fa fa-tag fa-fw"></i> Producten</a>
+                    </li>
+                    <li>
+                        <a href="/Admin/AdminCategories/Index"><i class="fa fa-edit fa-fw"></i> Categorieen</a>
+                    </li>
+                    <li>
+                        <a href="/Admin/AdminSubCategories/Index"><i class="fa fa-edit fa-fw"></i> SubCategorieen</a>
+                    </li>
+                    <li>
+                        <a href="/Admin/AdminSubSubCategories/Index"><i class="fa fa-edit fa-fw"></i> SubSubCategorieen</a>
+                    </li>
+                    <li>
+                        <a href="/Admin/AdminRegister/AdminRegister"><i class="fa fa-edit fa-fw"></i> Admin Registratie</a>
+                    </li>
+}
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

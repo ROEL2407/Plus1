@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -50,8 +51,9 @@ namespace Plus1.Areas.Admin.Controllers
                 NewsArticleID = model.NewsArticleID,
                 Title = model.Title,
                 Content = model.Content,
-                Date = DateTime.Now
-            });
+                Date = DateTime.ParseExact("12/02/21 10:56:09", "dd/MM/yy HH:mm:ss", CultureInfo.InvariantCulture) //NOG NIET AF (was datetime.now)
+
+        });
             db.SaveChanges();
             //return RedirectToAction("index");
 
