@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class="çontainer">
+    <div class="row">
+        <div class="col-lg-12">
+            @using (Html.BeginForm("Upload_file", "Upload", FormMethod.Post, new { enctype = "mulitpart/form-data"}))
+            {
+                <label for="thumbnail">Upload foto</label>
+                <input type="file" name="file" accept="image/k-png, image/gif, image/jpeg"/>
+                <input type="submit" class="btn btn-success" value="Upload"/>
+            }
+        </div>
+    </div>
+</div>
