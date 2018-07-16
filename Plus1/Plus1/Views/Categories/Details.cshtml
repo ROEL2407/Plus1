@@ -31,8 +31,12 @@
                     <div class="clearfix"></div>
                     <h3>Producten in deze categorie</h3>
                     <br />
-                    @foreach (var item in Model.Products)
-    {
+                    @foreach (var naam in Model.SubCategory)
+                    {
+                <h3>@naam.Name</h3>
+
+                    foreach (var item in Model.Products )
+                    {
                 <div class="col-md-4 top_brand_left" style="margin-bottom:30px; height:480px">
                     <div class="hover14 column">
                         <div class="agile_top_brand_left_grid">
@@ -57,7 +61,7 @@
                     </div>
                 </div>
 
-}
+                    }}
                 </div>
         </div>
     </div>

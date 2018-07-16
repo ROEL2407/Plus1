@@ -9,8 +9,7 @@ namespace Plus1.Migrations
     {
         public Configuration()
         {
-            //AutomaticMigrationsEnabled = false;
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(Plus1.Models.ApplicationDbContext context)

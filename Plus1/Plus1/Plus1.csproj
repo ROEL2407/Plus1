@@ -205,6 +205,7 @@
     <Compile Include="Areas\Admin\Controllers\AdminSubCategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminSubSubCategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomePageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UploadController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
@@ -218,6 +219,10 @@
     <Compile Include="Controllers\SubSubCategoryController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807161025232_init.cs" />
+    <Compile Include="Migrations\201807161025232_init.Designer.cs">
+      <DependentUpon>201807161025232_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -333,6 +338,7 @@
     <Content Include="Areas\Admin\Template\vendor\metisMenu\metisMenu.min.js" />
     <Content Include="Areas\Admin\Template\vendor\raphael\raphael.js" />
     <Content Include="Areas\Admin\Template\vendor\raphael\raphael.min.js" />
+    <Content Include="Areas\Admin\Views\Upload\Upload_file.cshtml" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\sb-admin-2.css" />
@@ -425,6 +431,7 @@
     <Content Include="Areas\Admin\Views\AdminSubSubCategories\Details.cshtml" />
     <Content Include="Areas\Admin\Views\AdminSubSubCategories\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\AdminSubSubCategories\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Upload\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
@@ -533,6 +540,11 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201807161025232_init.resx">
+      <DependentUpon>201807161025232_init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
