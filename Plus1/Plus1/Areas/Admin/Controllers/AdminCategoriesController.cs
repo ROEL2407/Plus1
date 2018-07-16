@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -36,29 +37,7 @@ namespace Plus1.Areas.Admin.Controllers
             return View(category);
         }
 
-        // GET: Admin/AdminCategories/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Admin/AdminCategories/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Name,Image")] Category category)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Category.Add(category);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(category);
-        }
-
+      
         // GET: Admin/AdminCategories/Edit/5
         public ActionResult Edit(string id)
         {
@@ -79,14 +58,35 @@ namespace Plus1.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Name,Image")] Category category)
+        public ActionResult Edit(Category category, HttpPostedFileBase fileUpload)
         {
-            if (ModelState.IsValid)
+
+            if (ModelState.IsValid && fileUpload != null && fileUpload.ContentLength > 0)
             {
-                db.Entry(category).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+               // var db = new ApplicationDbContext();
+
+
+                string fileGuid = Guid.NewGuid().ToString();
+                string extension = Path.GetExtension(fileUpload.FileName);
+                string newFilename = fileGuid + extension;
+
+                string uploadPath = Path.Combine(Server.MapPath("~/Content/uploads/"));
+
+                fileUpload.SaveAs(Path.Combine(uploadPath, newFilename));
+
+                category.Image = newFilename;
+
+             
+               // db.SaveChanges();
+               // return RedirectToAction("index");
+                if (ModelState.IsValid)
+                {
+                    db.Entry(category).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
+          
             return View(category);
         }
 

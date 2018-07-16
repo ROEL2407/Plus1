@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -83,16 +84,31 @@ namespace Plus1.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Name,ParentName,Image")] SubSubCategory subSubCategory)
+        public ActionResult Edit(SubSubCategory subSubCategory, HttpPostedFileBase fileUpload)
         {
-            if (ModelState.IsValid)
+
+             if (ModelState.IsValid && fileUpload != null && fileUpload.ContentLength > 0)
             {
-                db.Entry(subSubCategory).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+
+                string fileGuid = Guid.NewGuid().ToString();
+                string extension = Path.GetExtension(fileUpload.FileName);
+                string newFilename = fileGuid + extension;
+
+                string uploadPath = Path.Combine(Server.MapPath("~/Content/uploads/"));
+
+                fileUpload.SaveAs(Path.Combine(uploadPath, newFilename));
+
+                subSubCategory.Image = newFilename;
+
+                if (ModelState.IsValid)
+                {
+                    db.Entry(subSubCategory).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-            ViewBag.ParentName = new SelectList(db.SubCategory, "Name", "ParentName", subSubCategory.ParentName);
             return View(subSubCategory);
+         
         }
 
         // GET: Admin/AdminSubSubCategories/Delete/5

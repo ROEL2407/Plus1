@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -83,14 +84,36 @@ namespace Plus1.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Name,ParentName,Image")] SubCategory subCategory)
+        public ActionResult Edit(SubCategory subCategory, HttpPostedFileBase fileUpload)
         {
-            if (ModelState.IsValid)
+
+            if (ModelState.IsValid && fileUpload != null && fileUpload.ContentLength > 0)
             {
-                db.Entry(subCategory).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                // var db = new ApplicationDbContext();
+
+
+                string fileGuid = Guid.NewGuid().ToString();
+                string extension = Path.GetExtension(fileUpload.FileName);
+                string newFilename = fileGuid + extension;
+
+                string uploadPath = Path.Combine(Server.MapPath("~/Content/uploads/"));
+
+                fileUpload.SaveAs(Path.Combine(uploadPath, newFilename));
+
+                subCategory.Image = newFilename;
+
+
+                // db.SaveChanges();
+                // return RedirectToAction("index");
+                if (ModelState.IsValid)
+                {
+                    db.Entry(subCategory).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
             }
+          
             ViewBag.ParentName = new SelectList(db.Category, "Name", "Image", subCategory.ParentName);
             return View(subCategory);
         }
