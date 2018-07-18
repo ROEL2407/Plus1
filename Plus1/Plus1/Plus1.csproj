@@ -219,26 +219,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807181725192_Appsfxd.cs" />
-    <Compile Include="Migrations\201807181725192_Appsfxd.Designer.cs">
-      <DependentUpon>201807181725192_Appsfxd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807181741416_Orders.cs" />
-    <Compile Include="Migrations\201807181741416_Orders.Designer.cs">
-      <DependentUpon>201807181741416_Orders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807181751045_useridorder.cs" />
-    <Compile Include="Migrations\201807181751045_useridorder.Designer.cs">
-      <DependentUpon>201807181751045_useridorder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807181814539_orderitems.cs" />
-    <Compile Include="Migrations\201807181814539_orderitems.Designer.cs">
-      <DependentUpon>201807181814539_orderitems.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807181816142_oitrderirm.cs" />
-    <Compile Include="Migrations\201807181816142_oitrderirm.Designer.cs">
-      <DependentUpon>201807181816142_oitrderirm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -552,23 +532,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807181725192_Appsfxd.resx">
-      <DependentUpon>201807181725192_Appsfxd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807181741416_Orders.resx">
-      <DependentUpon>201807181741416_Orders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807181751045_useridorder.resx">
-      <DependentUpon>201807181751045_useridorder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807181814539_orderitems.resx">
-      <DependentUpon>201807181814539_orderitems.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807181816142_oitrderirm.resx">
-      <DependentUpon>201807181816142_oitrderirm.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
