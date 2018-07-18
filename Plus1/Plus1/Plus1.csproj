@@ -219,13 +219,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807170920311_init.cs" />
-    <Compile Include="Migrations\201807170920311_init.Designer.cs">
-      <DependentUpon>201807170920311_init.cs</DependentUpon>
+    <Compile Include="Migrations\201807181725192_Appsfxd.cs" />
+    <Compile Include="Migrations\201807181725192_Appsfxd.Designer.cs">
+      <DependentUpon>201807181725192_Appsfxd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807170921526_init1.cs" />
-    <Compile Include="Migrations\201807170921526_init1.Designer.cs">
-      <DependentUpon>201807170921526_init1.cs</DependentUpon>
+    <Compile Include="Migrations\201807181741416_Orders.cs" />
+    <Compile Include="Migrations\201807181741416_Orders.Designer.cs">
+      <DependentUpon>201807181741416_Orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807181751045_useridorder.cs" />
+    <Compile Include="Migrations\201807181751045_useridorder.Designer.cs">
+      <DependentUpon>201807181751045_useridorder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807181814539_orderitems.cs" />
+    <Compile Include="Migrations\201807181814539_orderitems.Designer.cs">
+      <DependentUpon>201807181814539_orderitems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807181816142_oitrderirm.cs" />
+    <Compile Include="Migrations\201807181816142_oitrderirm.Designer.cs">
+      <DependentUpon>201807181816142_oitrderirm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -236,6 +248,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CategoryViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
+    <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Models\SubCategory.cs" />
     <Compile Include="Models\DeliverySlot.cs" />
     <Compile Include="Models\DeliverySlotID.cs" />
@@ -514,8 +527,8 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Cart\Empty.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
-    <Content Include="Views\Order\Delivery.cshtml" />
-    <Content Include="Views\Order\ThankYou.cshtml" />
+    <Content Include="Views\Order\Finish.cshtml" />
+    <Content Include="Views\Account\Orders.cshtml" />
     <None Include="Views\SubCategory\Details.cshtml" />
     <Content Include="Views\SubSubCategory\Details.cshtml" />
   </ItemGroup>
@@ -541,11 +554,20 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807170920311_init.resx">
-      <DependentUpon>201807170920311_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807181725192_Appsfxd.resx">
+      <DependentUpon>201807181725192_Appsfxd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807170921526_init1.resx">
-      <DependentUpon>201807170921526_init1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807181741416_Orders.resx">
+      <DependentUpon>201807181741416_Orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807181751045_useridorder.resx">
+      <DependentUpon>201807181751045_useridorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807181814539_orderitems.resx">
+      <DependentUpon>201807181814539_orderitems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807181816142_oitrderirm.resx">
+      <DependentUpon>201807181816142_oitrderirm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

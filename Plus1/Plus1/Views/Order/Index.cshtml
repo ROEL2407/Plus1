@@ -1,21 +1,26 @@
-﻿@model Plus1.Models.CartViewModel
-
+﻿
 @{
-    ViewBag.Title = "Mijn Winkelwagen";
+    ViewBag.Title = "Bestelling Afronden";
 }
 <div class="register">
     <div class="container">
         <div class="login-form-grids">
             <h5>Uw Gegevens</h5>
-            <form action="Order/Delivery" method="post">
-                <input type="text" name="Firstname" placeholder="Voornaam">
-                <input type="text" name="Surname" placeholder="Achternaam">
-                <input type="text" name="Adress" placeholder="Adres">
-                <input type="text" name="Zipcode" placeholder="Postcode">
-                <input type="text" name="City" placeholder="Plaats">
-                <input type="submit" value="Naar bezorgmoment">
+            <form action="http://localhost:52447/Order/Finish" method="post">
+                <input type="text" name="_Firstname" placeholder="Voornaam">
+                <input type="text" name="_Surname" placeholder="Achternaam">
+                <input type="text" name="_Adress" placeholder="Adres">
+                <input type="text" name="_Zipcode" placeholder="Postcode">
+                <input type="text" name="_City" placeholder="Plaats">
+                <br />
+                <h5>Selecteer een bezorgmoment:</h5>
+                <input type="radio" name="_DeliveryMoment" value="2018-07-17 8:00 - 22:00" /> 2018-07-17 8:00 - 22:00<br>
+                <input type="radio" name="_DeliveryMoment" value="2018-07-17 8:00 - 22:00" /> 2018-07-17 8:00 - 22:00<br>
+                <input type="radio" name="_DeliveryMoment" value="2018-07-17 8:00 - 22:00" /> 2018-07-17 8:00 - 22:00<br>
+                <br />
+                <input type="submit" value="Bestelling Afronden">
             </form>
         </div>
-       
+
     </div>
 </div>

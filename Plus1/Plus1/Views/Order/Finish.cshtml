@@ -1,0 +1,14 @@
+﻿@model Plus1.Models.Order
+@{
+    ViewBag.Title = "Bedankt";
+}
+<div class="register">
+    <div class="container">
+        <h5>Bedankt voor uw Bestelling!</h5>
+        <p>
+           Uw bestelling is succesvol geplaatst onder ordernummer: <b>@Html.DisplayFor(model => model.OrderID)</b>. 
+             De bestelling zal geleverd worden op <b> @Html.DisplayFor(model => model.DeliveryMoment)</b><br />
+            U kunt al uw bestellingen bekijken in uw account!
+        </p>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
@@ -159,7 +160,20 @@ namespace Plus1.Controllers
         {
             return View();
         }
-
+        // GET: /Account/Register
+        [AllowAnonymous]
+        public ActionResult Orders()
+        {
+            var userId = User.Identity.GetUserId();
+            //Cart UserCart = db.Carts.Where(Cart => Cart.UserId == userId).DefaultIfEmpty(null).FirstOrDefault();
+            Order VO = new Order();
+            List<Order> UserOrders = new List<Order>();
+            foreach (Order o in db.Order.Where(Ci => Ci.UserId == userId))
+            {
+                UserOrders.Add(o);
+            }
+            return View(UserOrders);
+        }
         //
         // POST: /Account/Register
         [HttpPost]

@@ -44,15 +44,16 @@ namespace Plus1.Models
         public DbSet<SubSubCategory> SubSubCategory { get; set; }
         public DbSet<NewsArticle> NewsArticles { get; set; }
         public DbSet<Promotion> Promotions { get; set; }
-
+        public DbSet<Order> Order { get; set; }
+        public DbSet<OrderItem> OrderItem { get; set; }
 
         public System.Data.Entity.DbSet<Plus1.Models.CartItem> CartItems { get; set; }
         public System.Data.Entity.DbSet<Plus1.Models.Cart> Carts { get; set; }
 
 
-        // public System.Data.Entity.DbSet<Plus1.Models.NewsArticle> NewsArticles { get; set; }
+    // public System.Data.Entity.DbSet<Plus1.Models.NewsArticle> NewsArticles { get; set; }
 
-    }
+}
 
 
 }

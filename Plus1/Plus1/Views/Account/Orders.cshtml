@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Plus1.Models.Order>
+@{
+    ViewBag.Title = "Mijn Bestellingen";
+}
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+
+<div class="container">
+    <h2>@ViewBag.Title.</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var item in Model)
+         {
+
+        <b>Ordernummer: @Html.DisplayFor(modelItem => item.OrderID)</b><br />
+        <b>Word/Werd bezorgt op: </b>@Html.DisplayFor(modelItem => item.DeliveryMoment)
+            <hr />
+
+            }
+    </dl>
+</div>
